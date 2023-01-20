@@ -14,17 +14,11 @@ There will be a total of 4 pages.
 - Leaderboards
 - form
 
-<<<<<<< HEAD
-Adobe XD Wireframe desktop layout:
+Adobe XD Wireframe for phone layout: https://xd.adobe.com/view/ff96c8d4-9224-4557-b354-c127f33c00e6-aac5/
+Adobe XD Wireframe for computer layout: https://xd.adobe.com/view/bdda8c82-dadf-471a-ad16-adc7b5f9ec7b-e889/
 
-Adobe XD Wireframe mobile layout:
-
-<br>
-=======
-Adobe XD Wireframe: https://xd.adobe.com/view/ff96c8d4-9224-4557-b354-c127f33c00e6-aac5/ phone wireframe  
-https://xd.adobe.com/view/bdda8c82-dadf-471a-ad16-adc7b5f9ec7b-e889/ laptop wireframe
->>>>>>> 4496976f51855dfac06bf6cdef62c6f3933fa38d
 Features:
+
 - There will be a few interactive buttons that will be available for users such as the 'Play', 'Settings' and 'Leaderboard' buttons
 
 - There will be 3 hearts which are 3 chances given. If you answer the question wrongly 3 times, no points will be awarded and the game will end.
