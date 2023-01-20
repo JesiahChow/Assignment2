@@ -1,0 +1,12 @@
+*{box-sizing: border-box;
+padding: 0;
+margin: 0;
+color: rgb(43, 40, 40);}
+body{
+   background-color: azure;
+    }
+p{
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+}
