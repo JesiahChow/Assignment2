@@ -7,7 +7,7 @@ body{
    background-color: rgb(93, 93, 255);
     }
 h1{
-    padding: 40px;
+    padding: 20px;
     color: white;
 }
 /*Paragraphs*/
@@ -24,5 +24,45 @@ p{
    display: flex;
     justify-content: center;
 }
-.btn btn-primary btn-lg{display: flex;
-justify-content: center;}
+.menu{
+text-align: center;
+padding: 40px;
+font-size: 20px;
+}
+.menu a{color: black;
+    margin: 40px;
+    text-decoration: none;
+    border: 20px;
+    display: inline;
+
+}
+/* Leaderboard button */
+.menu .link1{
+    background-color: yellowgreen;
+    padding: 27px 68px;
+    border-radius: 20px;
+}
+.menu .link1:hover{
+    background-color: rgb(18, 184, 255);
+}
+/* Play button */
+.menu .link2{
+    background-color: rgb(255, 96, 96);
+    padding: 27px 68px;
+    border-radius: 20px;
+}
+.menu .link2:hover{
+    background-color:rgb(18, 184, 255);
+}
+/*Settings button */
+.menu .link3{
+    background-color: yellowgreen;
+    padding: 27px 68px;
+    border-radius: 20px;
+}
+.menu .link3:hover{
+    background-color:rgb(18, 184, 255) ;
+}
+footer{
+    padding: 60px;
+}
