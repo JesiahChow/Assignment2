@@ -9,7 +9,8 @@ There will be a total of 3 pages.
 - Gameplay
 - Leaderboards
 
-Adobe XD Wireframe:
+Adobe XD Wireframe: https://xd.adobe.com/view/ff96c8d4-9224-4557-b354-c127f33c00e6-aac5/ phone wireframe  
+https://xd.adobe.com/view/bdda8c82-dadf-471a-ad16-adc7b5f9ec7b-e889/ laptop wireframe
 Features:
 
 Technologies Used:
