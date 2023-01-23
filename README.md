@@ -1,11 +1,11 @@
 # Assignment2
 
 Team Frosty
-Jesiah and Mikhail
+Jesiah and Mikhail P02
 <br>
 Design Process:
-For our assignment 2, we will be doing a trivia quiz both suitable for the elderly and younger generations like us. It will be fun and educational quiz for all ages to learn. There will be a total of 10 questions of 3 different topics to choose from.<br>
-There will be a range of difficulties ranging from easy, medium to hard.
+For our assignment 2, we will be doing a trivia quiz both suitable for the elderly and younger generations like us. It will be fun and educational quiz for all ages to learn and at the same time improve their general knowledge and train their mind. There will be a total of 10 questions of 3 different topics to choose from.<br>
+The topics are general knowledge, politics and sports.There will be a range of difficulties ranging from easy, medium to hard.
 
 There will be a total of 4 pages.
 
@@ -31,8 +31,15 @@ Features:
 
 Technologies Used:
 
+- HTML: The primary language use for creating websites. For our website the main language we use is mostly HTML.
+- CSS : A mark-up language to aid HTML language. We used it to style our website.
+- Javascript : The language I had added in to implement human interactions and enable certain functions to work.
+- JQuery: A simplified version of Javascript, where we can simplify event handling.
+- API: We get data from third-party database where we can fetch the API and use it for our quiz.
+
 Testing:
 
 Credits:
+The APIs are taken from https://opentdb.com/api_config.php
 
 The fonts are taken from:
