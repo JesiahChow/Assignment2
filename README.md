@@ -12,7 +12,7 @@ There will be a total of 4 pages.
 - Homepage
 - Gameplay
 - Leaderboards
-- form
+- Settings
 
 Adobe XD Wireframe for phone layout: https://xd.adobe.com/view/ff96c8d4-9224-4557-b354-c127f33c00e6-aac5/
 Adobe XD Wireframe for computer layout: https://xd.adobe.com/view/bdda8c82-dadf-471a-ad16-adc7b5f9ec7b-e889/
@@ -38,6 +38,9 @@ Technologies Used:
 - API: We get data from third-party database where we can fetch the API and use it for our quiz.
 
 Testing:
+- The user can select their desired settigns for the quiz
+- The user should be able to gain points, lose by lives or running out of time, and win by finishing the quiz
+- The user should be able to see themselves in the leaderboards and others
 
 Credits:
 The APIs are taken from https://opentdb.com/api_config.php
