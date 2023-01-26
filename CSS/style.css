@@ -4,7 +4,7 @@ margin: 0;
 color: rgb(255, 255, 255);
 }
 body{
-   background-color: rgb(93, 93, 255);
+   background-color: rgb(79, 79, 233);
     }
 h1{
     padding: 20px;
@@ -26,7 +26,7 @@ p{
 }
 .menu{
 text-align: center;
-padding: 40px;
+padding: 70px;
 font-size: 20px;
 }
 .menu a{color: black;
@@ -64,5 +64,46 @@ font-size: 20px;
     background-color:rgb(18, 184, 255) ;
 }
 footer{
-    padding: 60px;
+    padding: 50px;
+    color: black;
+    background-color: rgb(51, 51, 198);
+}
+.button1
+{
+    background-color: rgb(248, 76, 76);
+    display: inline-flex;
+    text-align: center;
+    border: 20px;
+    border-radius: 20px;
+    margin: 20px;
+    font-size: 20px;
+}
+.button1 a
+{
+    text-decoration: none;
+    padding: 27px 68px;
+    color: black;
+
+}
+.button1 a:hover{
+    background-color: rgb(18, 184, 255);
+    padding: 27px 68px;
+    border-radius: 20px;
+}
+.button2
+{
+    background-color: rgb(248, 76, 76);
+    display: inline-flex;
+    text-align: center;
+    border: 20px;
+    border-radius: 20px;
+    margin: 20px;
+    font-size: 20px;
+}
+.button2 a
+{
+    text-decoration: none;
+    padding: 27px 68px;
+    color: black;
+
 }
