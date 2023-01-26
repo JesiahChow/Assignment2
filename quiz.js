@@ -75,8 +75,10 @@ $(document).ready(function () {
 
 
 
+
   function getPlayerinfo(all = true) {
-  
+  //get players info for leaderboard
+  //need add arguments for FUTURE
 
     let settings = {
       "async": true,
