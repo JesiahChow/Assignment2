@@ -3,15 +3,56 @@
 $(document).ready(function () {
   const APIKEY = "63d1f5f8a95709597409cf9c";
 
+  function getQuestions(){
+  //get players info for leaderboard
+  //need add arguments for FUTURE
 
-  //get question data
-  url = "https://opentdb.com/api.php?amount=10&category=24  "
 
-  //get questions
+    //variables for url
+    let category_input = ""
+    let difficulty_input = ""
 
-  fetch(url)
-  .then(response => {return response.json()})
-  .then(loadedQuestions => console.log(loadedQuestions.results));
+    //test player selection
+    let player_selection = {"Category" : "Sports", "Difficulty" : "Hard"}
+
+    if (player_selection["Category"] == "General Knowledge")
+    {
+      category_input = "9"
+    }
+    else if (player_selection["Category"] == "Politics")
+    {
+      category_input = "24"
+    }
+    else if (player_selection["Category"] == "Sports")
+    {
+      category_input = "21"
+    }
+
+
+    if (player_selection["Difficulty"] == "Easy")
+    {
+      difficulty_input = "easy"
+    }
+    else if (player_selection["Difficulty"] == "Medium")
+    {
+      difficulty_input = "medium"
+    }
+    else if (player_selection["Difficulty"] == "Hard")
+    {
+      difficulty_input = "hard"
+    }
+    
+
+    //question database
+    //change url to get different questions
+    url = `https://opentdb.com/api.php?amount=10&category=${category_input}&difficulty=${difficulty_input}`
+
+    //get questions
+
+    fetch(url)
+    .then(response => {return response.json()})
+    .then(loadedQuestions => console.log(loadedQuestions.results));
+  }
 
   function uploadPlayerinfo(){
 
@@ -71,7 +112,7 @@ $(document).ready(function () {
     });
   }
 
-  let player_selection = {"Category" : "General Knowledge", "Difficulty" : "Easy"} // test player selection
+
 
 
 
@@ -79,6 +120,8 @@ $(document).ready(function () {
   function getPlayerinfo(all = true) {
   //get players info for leaderboard
   //need add arguments for FUTURE
+
+  let player_selection = {"Category" : "General Knowledge", "Difficulty" : "Easy"} // test player selection
 
     let settings = {
       "async": true,
@@ -122,6 +165,7 @@ $(document).ready(function () {
     });
 
   }
+  getQuestions();
   //uploadPlayerinfo();
   //getPlayerinfo();
 
