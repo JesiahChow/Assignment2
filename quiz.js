@@ -68,7 +68,7 @@ $(document).ready(function () {
   $.ajax(settings).done(function (response) {
   });
 
-  let player_selection = {"Category" : "Sports", "Difficulty" : "Medium"}
+  let player_selection = {"Category" : "General Knowledge", "Difficulty" : "Easy"} // test player selection
 
 
 
