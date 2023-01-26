@@ -1,7 +1,12 @@
-*{box-sizing: border-box;
-padding: 0;
-margin: 0;
-color: rgb(255, 255, 255);
+@import url("https://fonts.googleapis.com/css2?family=Kanit&family=PT+Sans&display=swap");
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-family: 'Kanit', sans-serif;
+   
 }
 body{
    background-color: rgb(79, 79, 233);
@@ -16,18 +21,17 @@ p{
     padding: 10px;
     font-size: 20px;
 }
-/*bootstrap navbar */
-.nav-link{color: white;}
-.nav-link:hover{color: aqua;}
 
 .animation{
    display: flex;
-    justify-content: center;
+   justify-content: center;
 }
 .menu{
 text-align: center;
 padding: 70px;
 font-size: 20px;
+display: flex;
+justify-content: center;
 }
 .menu a{color: black;
     margin: 40px;
@@ -72,17 +76,19 @@ footer{
 {
     background-color: rgb(248, 76, 76);
     display: inline-flex;
+    justify-content: space-between;
     text-align: center;
     border: 20px;
     border-radius: 20px;
-    margin: 20px;
     font-size: 20px;
+    margin: 20px;
 }
 .button1 a
-{
+{ 
     text-decoration: none;
     padding: 27px 68px;
     color: black;
+    
 
 }
 .button1 a:hover{
@@ -95,15 +101,128 @@ footer{
     background-color: rgb(248, 76, 76);
     display: inline-flex;
     text-align: center;
+    justify-content: center;
     border: 20px;
     border-radius: 20px;
     margin: 20px;
+    float: right;
     font-size: 20px;
+    
 }
+
 .button2 a
 {
     text-decoration: none;
     padding: 27px 68px;
     color: black;
+  
+
+}
+.link{
+    pointer-events: none;
+}
+
+.button2 a:hover
+{
+    background-color: rgb(18, 184, 255);
+    padding: 27px 68px;
+    border-radius: 20px;
+    pointer-events: all;
+}
+.dropdown{
+    min-width: 15em;
+    position: relative;
+    margin: 70px;
+}
+/*Dropdown button*/
+
+.dropdown-options{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.dropdown *{
+    box-sizing: border-box;
+}
+.select{
+    background-color: rgb(46, 173, 118);
+    font-size: 22px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    border:2px solid;
+    border-radius: 0.5em;
+    padding: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+}
+/*clicked styles*/
+.select-clicked{
+    border: 2px solid;
+
+}
+.caret{
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid black;
+    transition: 0.3s;
+}
+.caret-rotate{
+    transform: rotate(180deg);
+}
+.list{
+   list-style:none ;
+   padding: 20px 30px;
+   background-color: rgb(91, 66, 20);
+   border: 1px solid;
+   border-radius: 5px;
+   position: relative;
+   width: 100%;
+   opacity: 0;
+   display: none;
+
+}
+.list li{
+    padding: 10px 12px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*.list li:hover{
+
+}*/
+
+/*open-style*/
+.list-open{
+    display: block;
+    opacity: 1;
+
+}
+
+
+/*flex when reached a specific resolution */
+@media (max-width:600px)
+{
+    .menu{
+        flex-direction: column;
+    }
+    footer{
+        flex-direction: row;
+    }
+    .button1{
+        flex-direction: row;
+    }
+    .button2
+    {
+        flex-direction: row;
+        margin: 24px;
+        
+
+    }
+    .dropdown-options{
+        flex-direction: column;
+        margin: 50px;
+    }
 
 }

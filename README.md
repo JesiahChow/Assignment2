@@ -10,6 +10,7 @@ The topics are general knowledge, politics and sports.There will be a range of d
 There will be a total of 4 pages.
 
 - Homepage
+- Game menu
 - Gameplay
 - Leaderboards
 - Settings
@@ -38,6 +39,7 @@ Technologies Used:
 - API: We get data from third-party database where we can fetch the API and use it for our quiz.
 
 Testing:
+
 - The user can select their desired settigns for the quiz
 - The user should be able to gain points, lose by lives or running out of time, and win by finishing the quiz
 - The user should be able to see themselves in the leaderboards and others
@@ -47,4 +49,7 @@ The APIs are taken from https://opentdb.com/api_config.php
 Heart icon taken from: https://commons.wikimedia.org/wiki/File:Love_Heart_symbol.svg
 broken heart icon taken from https://freesvg.org/broken-heart-icon
 recolored broken heart icon and made stopwatch icon using adobe photoshop
+
 The fonts are taken from:
+
+- https://fonts.google.com/specimen/Kanit?preview.text=Who%20scored%20against%20Real%20Madrid%3F&preview.text_type=custom
