@@ -13,60 +13,63 @@ $(document).ready(function () {
   .then(response => {return response.json()})
   .then(loadedQuestions => console.log(loadedQuestions.results));
 
+  function uploadPlayerinfo(){
 
-  let player_info= ["Bob","Bob@gmail.com","BobLovesCake",2314,2,"Politics","Easy"] //test_player info
-
-
-
-  //obtain player info
-  let playerName = $("#player-name").val();
-  let playerEmail = $("#player-email").val();
-  let playerPassword = $("#player-password").val();
-  let playerScore = $("#player-score").val();
-  let playerLives = $("#player-lives").val();
-  let playerCategory = $("#player-category").val();
-  let playerDifficulty = $("#player-difficulty").val();
+    let player_info= ["Bob","Bob@gmail.com","BobLovesCake",2314,2,"Politics","Easy"] //test_player info
 
 
-//data to post
-  let jsondata =
-  {
-    /*"Name": playerName,
-    "Email": playerEmail,
-    "Password": playerPassword,
-    "Score" : playerScore,
-    "Lives" : playerLives,
-    "Category" : playerCategory,
-    "Difficulty" : playerDifficulty */
 
-    "Name": player_info[0],
-    "Email": player_info[1],
-    "Password": player_info[2],
-    "Score" : player_info[3],
-    "Lives" : player_info[4],
-    "Category" : player_info[5],
-    "Difficulty" : player_info[6] //test submit data
-  }
+    //obtain player info
+    let playerName = $("#player-name").val();
+    let playerEmail = $("#player-email").val();
+    let playerPassword = $("#player-password").val();
+    let playerScore = $("#player-score").val();
+    let playerLives = $("#player-lives").val();
+    let playerCategory = $("#player-category").val();
+    let playerDifficulty = $("#player-difficulty").val();
 
-  let settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://leaderboard-4a7a.restdb.io/rest/players",
-    "method": "POST", //[cher] we will use post to send info
-    "headers": {
-      "content-type": "application/json",
-      "x-apikey": APIKEY,
-      "cache-control": "no-cache"
-    },
-    "processData": false,
-    "data": JSON.stringify(jsondata),
-    "beforeSend": function(){
 
+    //data to post
+    let jsondata =
+    {
+      /*"Name": playerName,
+      "Email": playerEmail,
+      "Password": playerPassword,
+      "Score" : playerScore,
+      "Lives" : playerLives,
+      "Category" : playerCategory,
+      "Difficulty" : playerDifficulty */
+
+      "Name": player_info[0],
+      "Email": player_info[1],
+      "Password": player_info[2],
+      "Score" : player_info[3],
+      "Lives" : player_info[4],
+      "Category" : player_info[5],
+      "Difficulty" : player_info[6] //test submit data
     }
-  }
 
-  $.ajax(settings).done(function (response) {
-  });
+    let settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://leaderboard-4a7a.restdb.io/rest/players",
+      "method": "POST", //[cher] we will use post to send info
+      "headers": {
+        "content-type": "application/json",
+        "x-apikey": APIKEY,
+        "cache-control": "no-cache"
+      },
+      "processData": false,
+      "data": JSON.stringify(jsondata),
+
+      //add loading/finished screen
+      "beforeSend": function(){
+      }
+    }
+
+    $.ajax(settings).done(function (response) {
+    });
+  }
 
   let player_selection = {"Category" : "General Knowledge", "Difficulty" : "Easy"} // test player selection
 
@@ -87,9 +90,7 @@ $(document).ready(function () {
       },
     }
 
-    //[STEP 8]: Make our AJAX calls
-    //Once we get the response, we modify our table content by creating the content internally. We run a loop to continously add on data
-    //RESTDb/NoSql always adds in a unique id for each data, we tap on it to have our data and place it into our links 
+
     $.ajax(settings).done(function (response) {
       
       for (var i = 0; i < response.length ; i++) {
@@ -119,6 +120,7 @@ $(document).ready(function () {
     });
 
   }
-  getPlayerinfo();
+  //uploadPlayerinfo();
+  //getPlayerinfo();
 
 });
