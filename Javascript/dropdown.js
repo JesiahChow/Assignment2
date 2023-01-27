@@ -1,4 +1,7 @@
 //Getting all dropdowns from the document
+const start_button = document.querySelectorAll('.button2');
+
+
 const dropdowns = document.querySelectorAll('.dropdown');
 //Loop through all dropdown elements
 dropdowns.forEach(dropdown =>{
@@ -32,6 +35,11 @@ dropdowns.forEach(dropdown =>{
             caret.classList.remove('caret-rotate');
             //Add the open styles to the list element 
             list.classList.remove('list-open');
+
+            if ($('#option1').text().length != 0 && $('#option2').text().length != 0 && $('#option3').text().length != 0){
+                $(start_button).removeClass('disabled');
+            } 
+
         });
     });
     
@@ -53,21 +61,15 @@ dropdowns.forEach(dropdown =>{
 //});
 
 $(function () {
-    
-    $(".button2").addClass('disabled');
-    
-    $("#selection").keyup(function () {
+    //add css to disabled class to change button color
+    $(start_button).addClass('disabled');
 
-        var a = $("#selection").val();
-        if (a) {
-            $(".button2").removeClass('disabled');
-        } 
-        else {
-            $(".button2").addClass('disabled');
+    $(start_button).click(function () {
+        if ($(this).hasClass('disabled')){
+            return false;
+        } else
+        {
+            return true;
         }
-    });
-
-    $('.button2').click(function () {
-        if ($(this).hasClass('disabled')) return false;
     });
 });
