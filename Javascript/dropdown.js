@@ -1,7 +1,8 @@
 //Getting all dropdowns from the document
 const start_button = document.querySelectorAll('.button2');
 
-
+let category_selection = "";
+let difficulty_selection = "";
 const dropdowns = document.querySelectorAll('.dropdown');
 //Loop through all dropdown elements
 dropdowns.forEach(dropdown =>{
@@ -38,6 +39,9 @@ dropdowns.forEach(dropdown =>{
 
             if ($('#option1').text().length != 0 && $('#option2').text().length != 0 && $('#option3').text().length != 0){
                 $(start_button).removeClass('disabled');
+                console.log(document.getElementById("option1").innerHTML);
+                console.log(document.getElementById("option2").innerHTML);
+                console.log(document.getElementById("option3").innerHTML);
             } 
 
         });
@@ -69,7 +73,16 @@ $(function () {
             return false;
         } else
         {
+            category_selection = document.getElementById("option1").innerHTML;
+            difficulty_selection = document.getElementById("option2").innerHTML;
+            document.getElementById("option3").innerHTML;
+
+            //put here for now,change a link for start buttom and move this to the js for gameplay html in the FUTURE
+            getQuestions();
             return true;
         }
     });
 });
+
+  
+  
