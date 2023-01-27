@@ -45,7 +45,7 @@ $(document).ready(function () {
 
     //question database
     //change url to get different questions
-    url = `https://opentdb.com/api.php?amount=10&category=${category_input}&difficulty=${difficulty_input}`
+    url = `https://opentdb.com/api.php?amount=10&category=${category_input}&difficulty=${difficulty_input}&type=multiple`
 
     //get questions
 
