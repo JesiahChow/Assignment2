@@ -50,20 +50,6 @@ dropdowns.forEach(dropdown =>{
 
 });
 
-//const button = document.querySelectorAll('.button2');
-//const active = button.querySelector('.button2 a:hover');
-//const disable = button.querySelector('.link');
-//const blank = document.querySelector('.selected');
-//button.disable = true
-//button.addEventListener('click',() =>{
-    //if(blank.value() !== ""){
-        //disable = false;
-        //active = true;
-        
-        
-    //}
-//});
-
 $(function () {
     //add css to disabled class to change button color
     $(start_button).addClass('disabled');
