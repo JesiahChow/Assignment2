@@ -107,27 +107,23 @@ footer{
     margin: 20px;
     float: right;
     font-size: 20px;
-    
-}
-
-.button2 a
-{
     text-decoration: none;
     padding: 27px 68px;
     color: black;
-  
-
-}
-.link{
-    pointer-events: none;
+    
 }
 
-.button2 a:hover
+.disabled{
+    background-color: rgb(169, 169, 169);
+    cursor: default;
+}
+
+.button2:hover
 {
     background-color: rgb(18, 184, 255);
     padding: 27px 68px;
     border-radius: 20px;
-    pointer-events: all;
+
 }
 .dropdown{
     min-width: 15em;

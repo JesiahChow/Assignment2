@@ -34,18 +34,40 @@ dropdowns.forEach(dropdown =>{
             list.classList.remove('list-open');
         });
     });
+    
 
 });
 
-const button = document.querySelectorAll('.button2');
-const active = button.querySelector('.button2 a:hover');
-const disable = button.querySelector('.link');
-const blank = document.querySelector('.selected');
-
-button.addEventListener('click',() =>{
-    if(blank.value() != ""){
-        button.remove(disable);
-        button.toggle(active);
+//const button = document.querySelectorAll('.button2');
+//const active = button.querySelector('.button2 a:hover');
+//const disable = button.querySelector('.link');
+//const blank = document.querySelector('.selected');
+//button.disable = true
+//button.addEventListener('click',() =>{
+    //if(blank.value() !== ""){
+        //disable = false;
+        //active = true;
         
-    }
+        
+    //}
+//});
+
+$(function () {
+    
+    $(".button2").addClass('disabled');
+    
+    $("#selection").keyup(function () {
+
+        var a = $("#selection").val();
+        if (a) {
+            $(".button2").removeClass('disabled');
+        } 
+        else {
+            $(".button2").addClass('disabled');
+        }
+    });
+
+    $('.button2').click(function () {
+        if ($(this).hasClass('disabled')) return false;
+    });
 });
