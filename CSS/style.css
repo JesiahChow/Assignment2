@@ -263,13 +263,16 @@ footer{
   }
   
   /* Add a red background color to the back button */
-  .form-container .cancel {
+  .form-container .close {
     background-color:#d65151;
   }
   
   /* Add some hover effects to buttons */
   .form-container .btn:hover, .open-button:hover {
     opacity: 1;
+  }
+  .form-container .btn a{
+    text-decoration: none;
   }
 
 /*flex when reached a specific resolution */
