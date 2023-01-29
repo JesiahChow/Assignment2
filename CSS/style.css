@@ -10,6 +10,8 @@
 }
 body{
    background-color: rgb(79, 79, 233);
+   overflow: hidden;
+  
     }
 h1{
     padding: 20px;
@@ -71,6 +73,11 @@ footer{
     padding: 50px;
     color: black;
     background-color: rgb(51, 51, 198);
+   display: flex;
+   justify-content: center;
+   
+
+ 
 }
 .button1
 {
@@ -224,6 +231,7 @@ footer{
    
     text-align: center;
     justify-content: center;
+    display: flex;
 }
   
   /* Add styles to the form container */
@@ -240,6 +248,7 @@ footer{
     margin: 5px 0 22px 0;
     text-align: center;
     border: none;
+    border-radius: 15px;
     color: black;
     background: #f1f1f1;
   }
@@ -260,11 +269,13 @@ footer{
     width: 100%;
     margin-bottom:10px;
     opacity: 0.8;
+    border-radius: 15px;
   }
   
   /* Add a red background color to the back button */
   .form-container .close {
     background-color:#d65151;
+    border-radius: 15px;
   }
   
   /* Add some hover effects to buttons */
@@ -297,6 +308,9 @@ footer{
     .dropdown-options{
         flex-direction: column;
         margin: 50px;
+    }
+    .form-popup{
+        flex-direction: column;
     }
 
 }
