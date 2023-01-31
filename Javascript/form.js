@@ -34,4 +34,60 @@ function formValidation(){
   
     }
   }
+
+/*RestDB Database*/
+
+const apikey = "63b79ea5969f06502871ab23"
+
+$("#register").on("click",function(e){
+  e.preventDefault();
+  const emailValue = $("#email").val();
+  const passwordValue = $("#password").val();
+  let jsondata = {
+    "email":emailValue,
+    "password": passwordValue
+  };
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://interactivedev-8487.restdb.io/rest/account",
+    "method": "POST",
+    "headers": {
+      "content-type": "application/json",
+      "x-apikey": apikey,
+      "cache-control": "no-cache"
+    },
+    "processData": false,
+    "data": JSON.stringify(jsondata),
+    "beforeSend":function(){
+        $("#register").prop("disabled",true);
+        $("#signup-form").trigger("reset");
+    }
+  }
+  $.ajax(settings).done(function(response){
+    console.log(response);
+    $("#signup-form").prop("disabled",false);
+    getTable();
+  })
   
+})
+
+function getTable(){
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://interactivedev-8487.restdb.io/rest/account",
+    "method": "GET",
+    "headers": {
+      "content-type": "application/json",
+      "x-apikey": apikey,
+      "cache-control": "no-cache"
+    }
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+  
+}
+

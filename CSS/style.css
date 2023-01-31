@@ -10,7 +10,7 @@
 }
 body{
    background-color: rgb(79, 79, 233);
-   overflow: hidden;
+  
   
     }
 h1{
@@ -276,6 +276,16 @@ footer{
   .form-container .close {
     background-color:#d65151;
     border-radius: 15px;
+    padding: 16px 20px;
+    border: none;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+    border-radius: 15px;
+  
+  }
+  .form-container .close:hover{
+    opacity: 1;
   }
   
   /* Add some hover effects to buttons */
@@ -285,6 +295,10 @@ footer{
   .form-container .btn a{
     text-decoration: none;
   }
+  .form-container .close a{
+    text-decoration: none;
+  }
+
 
 /*flex when reached a specific resolution */
 @media (max-width:600px)
