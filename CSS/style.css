@@ -10,6 +10,8 @@
 }
 body{
    background-color: rgb(79, 79, 233);
+  
+  
     }
 h1{
     padding: 20px;
@@ -71,6 +73,11 @@ footer{
     padding: 50px;
     color: black;
     background-color: rgb(51, 51, 198);
+   display: flex;
+   justify-content: center;
+   
+
+ 
 }
 .button1
 {
@@ -195,6 +202,102 @@ footer{
     opacity: 1;
 
 }
+.homebutton{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
+.login ,.signup {
+    
+    background-color: red;
+    border: 2px black;
+    padding: 20px;
+    margin: 10px;
+    color: white;
+    border-radius: 5px;
+}
+.login a, .signup a{
+    text-decoration: none;
+    color: white;
+    
+}
+.login:hover,.signup:hover{
+    background-color: rgb(18, 184, 255);
+}
+
+
+.form-popup {
+   
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+  
+  /* Add styles to the form container */
+  .form-container {
+    padding: 50px;
+    color: black;
+  
+  }
+  
+  /* Full-width input fields */
+  .form-container input[type=email], .form-container input[type=password], .form-container input[type = name]{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    color: black;
+    background: #f1f1f1;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+    border-radius: 15px;
+  }
+  
+  /* Add a red background color to the back button */
+  .form-container .close {
+    background-color:#d65151;
+    border-radius: 15px;
+    padding: 16px 20px;
+    border: none;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+    border-radius: 15px;
+  
+  }
+  .form-container .close:hover{
+    opacity: 1;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+  .form-container .btn a{
+    text-decoration: none;
+  }
+  .form-container .close a{
+    text-decoration: none;
+  }
 
 
 /*flex when reached a specific resolution */
@@ -219,6 +322,9 @@ footer{
     .dropdown-options{
         flex-direction: column;
         margin: 50px;
+    }
+    .form-popup{
+        flex-direction: column;
     }
 
 }

@@ -40,7 +40,7 @@ Technologies Used:
 
 Testing:
 
-- The user can select their desired settigns for the quiz
+- The user can select their desired settings for the quiz
 - The user should be able to gain points, lose by lives or running out of time, and win by finishing the quiz
 - The user should be able to see themselves in the leaderboards and others
 
