@@ -9,12 +9,19 @@ $(document).ready(function () {
   var final_question = question.replace(/&quot;/g,'"')
   var final_question2 = final_question.replace(/&#039;/g,"'")
   var final_question3 = final_question2.replace(/&ldquo;/g,"'")
-  var question_list = final_question3.split("?,")
+  var final_question4 = final_question3.replace(/&rdquo;/g,"'")
+  var question_list = final_question4.split("?,")
+  var question_list2 = final_question3.split('""')
+
 
   var correct_answer = localStorage.getItem("correct_answer")
 
+  var answer1 = correct_answer.replace(/&quot;/g,'"')
+  var answer2 = answer1.replace(/&#039;/g,"'")
+  var answer3 = answer2.replace(/&ldquo;/g,"'")
+  var answer4 = answer3.replace(/&rdquo;/g,"'")
 
-  var correct_answer_list = correct_answer.split(",")
+  var correct_answer_list = answer4.split(",")
   var incorrect_answer = localStorage.getItem("incorrect_answer")
 
 
@@ -23,8 +30,9 @@ $(document).ready(function () {
   var final_inquestion = incorrect_answer.replace(/&quot;/g,'"')
   var final_inquestion2 = final_inquestion.replace(/&#039;/g,"'")
   var final_inquestion3 = final_inquestion2.replace(/&ldquo;/g,"'")
-  var incorect_answer_list = final_inquestion3.split(",")
-  console.log(incorect_answer_list)
+  var final_inquestion4 = final_inquestion3.replace(/&rdquo;/g,"'")
+  var incorect_answer_list = final_inquestion4.split(",")
+  console.log(correct_answer_list)
 
 
 
@@ -58,7 +66,8 @@ $(document).ready(function () {
   //add click listener
 
   $(".choice-container").click(function () {
-    console.log(i)
+    if (i < 11)
+    {
     let selection = ["choice1","choice2","choice3","choice4"]
     document.getElementById("question").textContent = question_list[i ]  
     let location = Math.floor(Math.random() * 4)
@@ -83,11 +92,19 @@ $(document).ready(function () {
     console.log(set_place4)
     i++
     j += 3
+    console.log(i)
+    if (i == 11)
+    {
+      window.open("leaderboard.html")
+    }
+    }
     
   })
-
-  })
+ 
   
+  })
+
+
 
 
 //

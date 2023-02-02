@@ -54,7 +54,7 @@ function getQuestions(){
     fetch(url)
     .then(response => {return response.json()})
     .then(loadedQuestions => 
-        {console.log(loadedQuestions.results);
+        {
         loadedQuestions.results.map((loadedQuestion) => {
             const formattedQuestion = {
                 question: loadedQuestion.question,
@@ -75,7 +75,6 @@ function getQuestions(){
               localStorage.setItem("correct_answer",text2)
               let text3 = incorrect_answer.toString(',')
               localStorage.setItem("incorrect_answer",text3)
-              console.log(text3)
             }
 
 
