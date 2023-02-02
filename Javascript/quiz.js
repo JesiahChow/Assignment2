@@ -1,8 +1,10 @@
 function getQuestions(){
   //get players info for leaderboard
   //need add arguments for FUTURE
-    let questions = []
+    let questions = [];
     let incorrect_answer = []
+    let correct_answer = []
+    var i = 0;
 
     //variables for url
     let category_input = ""
@@ -58,21 +60,31 @@ function getQuestions(){
                 incorrect_answer : loadedQuestion.incorrect_answers
             };
 
-            console.log(formattedQuestion["question"]);
-            console.log(formattedQuestion["answer"]);
+            questions[i] = formattedQuestion.question
+            correct_answer[i] = formattedQuestion.answer
+            incorrect_answer[i] = formattedQuestion.incorrect_answer
+            i++
 
-            questions.push(formattedQuestion["question"])
-            incorrect_answer.push(formattedQuestion["incorrect_answer"])
+            if (i <= 10)
+            {
+              let text = questions.toString(',')
+              localStorage.setItem("questions",text)
+              let text2 = correct_answer.toString(',')
+              localStorage.setItem("correct_answer",text2)
+              let text3 = incorrect_answer.toString(',')
+              localStorage.setItem("incorrect_answer",text3)
+              console.log(text3)
+            }
+
 
             return formattedQuestion;
 
         })
       })
 
-
-      console.log(questions[0])
-      console.log(incorrect_answer)
-
+ 
+      //console.log(questions[0])
+      //console.log(incorrect_answer)
   }
 
   function getPlayerinfo(all = true) {
