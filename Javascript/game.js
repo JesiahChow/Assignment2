@@ -30,6 +30,31 @@ $(document).ready(function () {
 
 
 
+  if (i ==0)
+  {
+    console.log(i)
+    let selection = ["choice1","choice2","choice3","choice4"]
+    document.getElementById("question").textContent = question_list[i ]  
+    let location = Math.floor(Math.random() * 4)
+    let set_place = selection[location]
+    document.getElementById(set_place).textContent = correct_answer_list[i] 
+    selection.splice(location,1)
+    let location2 = Math.floor(Math.random() * 3)
+    let set_place2 = selection[location2] 
+    document.getElementById(set_place2).textContent = incorect_answer_list[j] 
+    selection.splice(location2,1)
+    let location3 = Math.floor(Math.random() * 2)
+    let set_place3 = selection[location3]
+    document.getElementById(set_place3).textContent = incorect_answer_list[j + 1] 
+    selection.splice(location3,1)
+    let location4 = Math.floor(Math.random() * 1)
+    let set_place4 = selection[location4]
+    document.getElementById(set_place4).textContent = incorect_answer_list[j +2] 
+    selection.splice(location4,1)
+    i++
+    j += 3
+  }
+
   //add click listener
 
   $(".choice-container").click(function () {
@@ -50,7 +75,7 @@ $(document).ready(function () {
     selection.splice(location3,1)
     let location4 = Math.floor(Math.random() * 1)
     let set_place4 = selection[location4]
-    document.getElementById(set_place4).textContent = incorect_answer_list[j + 2] 
+    document.getElementById(set_place4).textContent = incorect_answer_list[j +2] 
     selection.splice(location4,1)
     console.log(set_place)
     console.log(set_place2)
