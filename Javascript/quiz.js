@@ -1,3 +1,5 @@
+/*Mikhail*/
+
 function getQuestions(){
   //get players info for leaderboard
   //need add arguments for FUTURE

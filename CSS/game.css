@@ -35,3 +35,20 @@ h1{
     padding: 10px;
     font-size: 22px;
 }
+.correct{background-color: rgb(29, 147, 29);}
+
+.incorrect{
+    background-color: rgb(166, 21, 21);
+}
+
+#hud{
+    display: flex;
+    justify-content: space-between;
+}
+.hud-prefix{
+    text-align: center;
+    font-size: 20px;
+}
+.hud-main-text{
+    text-align: center;
+}
