@@ -3,11 +3,14 @@
 function getQuestions(){
   //get players info for leaderboard
   //need add arguments for FUTURE
-
+    let questions = []
+    let incorrect_answer = []
 
     //variables for url
     let category_input = ""
     let difficulty_input = ""
+    let category_selection = localStorage.getItem("option1");
+    let difficulty_selection = localStorage.getItem("option2");
 
     //test player selection
     let player_selection = {"Category" : category_selection, "Difficulty" : difficulty_selection}
@@ -48,7 +51,30 @@ function getQuestions(){
 
     fetch(url)
     .then(response => {return response.json()})
-    .then(loadedQuestions => console.log(loadedQuestions.results));
+    .then(loadedQuestions => 
+        {console.log(loadedQuestions.results);
+        loadedQuestions.results.map((loadedQuestion) => {
+            const formattedQuestion = {
+                question: loadedQuestion.question,
+                answer: loadedQuestion.correct_answer,
+                incorrect_answer : loadedQuestion.incorrect_answers
+            };
+
+            console.log(formattedQuestion["question"]);
+            console.log(formattedQuestion["answer"]);
+
+            questions.push(formattedQuestion["question"])
+            incorrect_answer.push(formattedQuestion["incorrect_answer"])
+
+            return formattedQuestion;
+
+        })
+      })
+
+
+      console.log(questions[0])
+      console.log(incorrect_answer)
+
   }
 
   function getPlayerinfo(all = true) {
