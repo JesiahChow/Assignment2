@@ -16,14 +16,18 @@ $(document).ready(function () {
   var final_question4 = final_question3.replace(/&rdquo;/g,"'")
   var final_question5 = final_question4.replace(/cute;/g,"'")
   var final_question6 = final_question5.replace(/cute;/g,"'")
-  var final_question7 = final_question6.replace(".,",",")
-  var question_list = final_question7.split("?,")
+  var final_question7 = final_question6.replace(".,","?,")
+  var final_question8 = final_question7.replace("%","")
+  var final_question9 = final_question8.replace("a'","")
+  var question_list = final_question9.split("?,")
   if (question_list.length < 10)
   {
     var final_question5 = final_question4.replace("? ","?")
     var final_question6 = final_question5.replace(/cute;/g,"'")
     var final_question7 = final_question6.replace(".,",",")
-    question_list = final_question5.split("?,")
+    var final_question8 = final_question7.replace("%","")
+    var final_question9 = final_question8.replace("a'","")
+    question_list = final_question9.split("?,")
   }
   var question_list2 = final_question3.split('""')
 // ? ,
