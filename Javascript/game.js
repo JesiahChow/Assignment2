@@ -10,6 +10,8 @@ $(document).ready(function () {
     var question_heading = document.getElementById("questionCounter")
   var elements = document.getElementsByClassName("choice-container");
   var question = localStorage.getItem("questions")
+//format each question
+
   var final_question = question.replace(/&quot;/g,'"')
   var final_question2 = final_question.replace(/&#039;/g,"'")
   var final_question3 = final_question2.replace(/&ldquo;/g,"'")
