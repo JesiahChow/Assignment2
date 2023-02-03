@@ -7,16 +7,14 @@ function formValidation(){
     alert("Please fill the above fields");
     return false
   }
-    else{
+  else{
   
       document.querySelector("#email").value = "";
       document.querySelector("#name").value = "";
       document.querySelector("#password").value = "";
       alert("You have signed in!");
-      
-  
     }
-  }
+}
   /*Form validation for login*/ 
   function formValidate(){
     let name = document.forms["form"]["name"].value
