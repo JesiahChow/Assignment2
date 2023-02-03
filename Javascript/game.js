@@ -4,13 +4,18 @@ $(document).ready(function () {
     //console.log(incorrect_answer)
     let i = 0;
     let j = 0;
+    let score = 0;
+    let question_count = 1;
+    var score_heading = document.getElementById("score")
+    var question_heading = document.getElementById("questionCounter")
   var elements = document.getElementsByClassName("choice-container");
   var question = localStorage.getItem("questions")
   var final_question = question.replace(/&quot;/g,'"')
   var final_question2 = final_question.replace(/&#039;/g,"'")
   var final_question3 = final_question2.replace(/&ldquo;/g,"'")
   var final_question4 = final_question3.replace(/&rdquo;/g,"'")
-  var question_list = final_question4.split("?,")
+  var final_question5 = final_question4.replace(/cute;/g,"'")
+  var question_list = final_question5.split("?,")
   if (question_list.length < 10)
   {
     var final_question5 = final_question4.replace("? ","?")
@@ -82,6 +87,8 @@ $(document).ready(function () {
            if (this.id == set_place)
            {
              $(document.getElementById(this.id)).addClass("correct")
+             score += 10
+             score_heading.textContent = score
            }else{
             $(document.getElementById(this.id)).addClass("incorrect")
             if (set_place == "choice1")
@@ -110,6 +117,8 @@ $(document).ready(function () {
            if (this.id == set_place)
            {
             $(document.getElementById(this.id)).addClass("correct")
+            score += 10
+            score_heading.textContent = score
           }else{
             $(document.getElementById(this.id)).addClass("incorrect")
             if (set_place == "choice1")
@@ -139,6 +148,8 @@ $(document).ready(function () {
            if (this.id == set_place)
            {
             $(document.getElementById(this.id)).addClass("correct")
+            score += 10
+            score_heading.textContent = score
           }else{
             $(document.getElementById(this.id)).addClass("incorrect")
             if (set_place == "choice1")
@@ -167,6 +178,8 @@ $(document).ready(function () {
            if (this.id == set_place)
            {
             $(document.getElementById(this.id)).addClass("correct")
+            score += 10
+            score_heading.textContent = score
           }else{
             $(document.getElementById(this.id)).addClass("incorrect")
             if (set_place == "choice1")
@@ -189,6 +202,7 @@ $(document).ready(function () {
            //alert(this.id)
            this.id = "selection4"
         }
+ 
     }
     document.getElementById('choice1').onclick = reply_click;
     document.getElementById('choice2').onclick = reply_click;
@@ -206,6 +220,11 @@ $(document).ready(function () {
   setTimeout(() => {
     $(elements).removeClass('correct')
     $(elements).removeClass('incorrect')
+    if (i != 1)
+    {
+    question_count ++
+    question_heading.textContent = question_count + "/10"
+    }
   }, 1000)
   }
 
@@ -251,6 +270,8 @@ $(document).ready(function () {
            if (this.id == set_place)
            {
              $(document.getElementById(this.id)).addClass("correct")
+             score += 10
+             score_heading.textContent = score
             }else{
               $(document.getElementById(this.id)).addClass("incorrect")
               if (set_place == "choice1")
@@ -279,6 +300,8 @@ $(document).ready(function () {
            if (this.id == set_place)
            {
             $(document.getElementById(this.id)).addClass("correct")
+            score += 10
+            score_heading.textContent = score
           }else{
             $(document.getElementById(this.id)).addClass("incorrect")
             if (set_place == "choice1")
@@ -307,6 +330,8 @@ $(document).ready(function () {
            if (this.id == set_place)
            {
             $(document.getElementById(this.id)).addClass("correct")
+            score += 10
+            score_heading.textContent = score
           }else{
             $(document.getElementById(this.id)).addClass("incorrect")
             if (set_place == "choice1")
@@ -335,6 +360,8 @@ $(document).ready(function () {
            if (this.id == set_place)
            {
             $(document.getElementById(this.id)).addClass("correct")
+             score += 10
+             score_heading.textContent = score
           }else{
             $(document.getElementById(this.id)).addClass("incorrect")
             if (set_place == "choice1")
@@ -357,6 +384,8 @@ $(document).ready(function () {
            //alert(this.id)
            this.id = "selection4"
         }
+
+
     }
 
     document.getElementById('choice1').onclick = reply_click;
@@ -377,11 +406,19 @@ $(document).ready(function () {
   setTimeout(() => {
     $(elements).removeClass('correct')
     $(elements).removeClass('incorrect')
+    if (i != 1)
+    {
+    question_count ++
+    question_heading.textContent = question_count + "/10"
+    }
   }, 1000)
     console.log(i)
     if (i == 10)
     {
       window.open("leaderboard.html")
+      localStorage.removeItem("incorrect_answer")
+      localStorage.removeItem("correct_answer")
+      localStorage.removeItem("questions")
     }
     }
     
@@ -390,6 +427,8 @@ $(document).ready(function () {
   
   })
 
+
+//REMOVE LOCAL STORAGE TO GET ACCURATE QUESTIONS
 
 
 
