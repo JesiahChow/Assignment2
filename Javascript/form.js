@@ -35,7 +35,7 @@ function formValidation(){
     }
   }
 
-/*RestDB Database*/
+/*RestDB Database
 
 const apikey = "63b79ea5969f06502871ab23"
 
@@ -90,4 +90,4 @@ function getTable(){
   });
   
 }
-
+*/
