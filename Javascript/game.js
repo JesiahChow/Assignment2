@@ -15,10 +15,14 @@ $(document).ready(function () {
   var final_question3 = final_question2.replace(/&ldquo;/g,"'")
   var final_question4 = final_question3.replace(/&rdquo;/g,"'")
   var final_question5 = final_question4.replace(/cute;/g,"'")
-  var question_list = final_question5.split("?,")
+  var final_question6 = final_question5.replace(/cute;/g,"'")
+  var final_question7 = final_question6.replace(".,",",")
+  var question_list = final_question7.split("?,")
   if (question_list.length < 10)
   {
     var final_question5 = final_question4.replace("? ","?")
+    var final_question6 = final_question5.replace(/cute;/g,"'")
+    var final_question7 = final_question6.replace(".,",",")
     question_list = final_question5.split("?,")
   }
   var question_list2 = final_question3.split('""')
