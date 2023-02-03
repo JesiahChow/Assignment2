@@ -379,7 +379,7 @@ $(document).ready(function () {
     $(elements).removeClass('incorrect')
   }, 1000)
     console.log(i)
-    if (i == 11)
+    if (i == 10)
     {
       window.open("leaderboard.html")
     }
