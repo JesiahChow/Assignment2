@@ -15,10 +15,11 @@ $(document).ready(function () {
   var final_question = question.replace(/&quot;/g,'"')
   final_question = final_question.replace('";,',",")
   final_question = final_question.replace('";',"?")
-  final_question = final_question.replace(',W',"?,W")
+  final_question = final_question.replace('?W',"?,W")
   final_question = final_question.replace('hellip;',".....")
   final_question = final_question.replace('envious",',"envious ")
   final_question = final_question.replace('"Goldbricking",','"Goldbricking" ')
+  final_question = final_question.replace('? ,','  ?,')
   final_question = final_question.replace('?','?, ')
   
   var final_question2 = final_question.replace(/&#039;/g,"'")
@@ -32,7 +33,7 @@ $(document).ready(function () {
   var final_question10 = final_question9.replace(".',","?")
   var final_question11 = final_question10.replace(/&rsquo;/g,"'")
   var final_question12 = final_question11.replace("&","")
-  var final_question13 = final_question12.replace('",','" ?,')
+  var final_question13 = final_question12.replace('",','"')
   //final_question13 = final_question13.replace('?   ,',' ?,')
 
   var question_list = final_question13.split("?,")
