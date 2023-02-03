@@ -101,6 +101,7 @@ h1{
 .round-time-bar {
     margin: 1rem;
     overflow: hidden;
+    flex-direction: column-reverse;
   }
 
   .round-time-bar div {
@@ -109,6 +110,7 @@ h1{
       forwards;
     transform-origin: left center;
     background: linear-gradient(to bottom, red, #900);
+   
   }
 
   @keyframes roundtime {

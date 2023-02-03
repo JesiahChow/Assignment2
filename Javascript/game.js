@@ -13,6 +13,14 @@ $(document).ready(function () {
 //format each question
 
   var final_question = question.replace(/&quot;/g,'"')
+  final_question = final_question.replace('";,',",")
+  final_question = final_question.replace('";',"?")
+  final_question = final_question.replace(',W',"?,W")
+  final_question = final_question.replace('hellip;',".....")
+  final_question = final_question.replace('envious",',"envious ")
+  final_question = final_question.replace('"Goldbricking",','"Goldbricking" ')
+  final_question = final_question.replace('?','?, ')
+  
   var final_question2 = final_question.replace(/&#039;/g,"'")
   var final_question3 = final_question2.replace(/&ldquo;/g,"'")
   var final_question4 = final_question3.replace(/&rdquo;/g,"'")
@@ -21,7 +29,13 @@ $(document).ready(function () {
   var final_question7 = final_question6.replace(".,","?,")
   var final_question8 = final_question7.replace("%","")
   var final_question9 = final_question8.replace("a'","")
-  var question_list = final_question9.split("?,")
+  var final_question10 = final_question9.replace(".',","?")
+  var final_question11 = final_question10.replace(/&rsquo;/g,"'")
+  var final_question12 = final_question11.replace("&","")
+  var final_question13 = final_question12.replace('",','" ?,')
+  //final_question13 = final_question13.replace('?   ,',' ?,')
+
+  var question_list = final_question13.split("?,")
   if (question_list.length < 10)
   {
     var final_question5 = final_question4.replace("? ","?")
@@ -29,9 +43,19 @@ $(document).ready(function () {
     var final_question7 = final_question6.replace(".,",",")
     var final_question8 = final_question7.replace("%","")
     var final_question9 = final_question8.replace("a'","")
-    question_list = final_question9.split("?,")
+    var final_question10 = final_question9.replace(".',","' ?,")
+    var final_question11 = final_question10.replace(";',","?,")
+    var final_question12 = final_question11.replace(/&rsquo;/g,"'")
+    var final_question13 = final_question12.replace("&","")
+   // final_question13 = final_question13.replace('?   ,',' ?,')
+    var final_question14 = final_question13.replace('",','" ?,')
+    question_list = final_question14.split("?,")
+    
   }
-  var question_list2 = final_question3.split('""')
+  if(question_list.length > 10)
+  {
+    question_list.splice(1,1)
+  }
 // ? ,
 
   var correct_answer = localStorage.getItem("correct_answer")
@@ -40,8 +64,12 @@ $(document).ready(function () {
   var answer2 = answer1.replace(/&#039;/g,"'")
   var answer3 = answer2.replace(/&ldquo;/g,"'")
   var answer4 = answer3.replace(/&rdquo;/g,"'")
+  //answer4 = answer4.replace(",2,",",")
+  //answer4 = answer4.replace(", Inc,",",")
+  var answer5 = answer4.replace("&","")
+  var answer6 = answer5.replace(";","")
 
-  var correct_answer_list = answer4.split(",")
+  var correct_answer_list = answer6.split(",")
   var incorrect_answer = localStorage.getItem("incorrect_answer")
 
 
@@ -51,9 +79,17 @@ $(document).ready(function () {
   var final_inquestion2 = final_inquestion.replace(/&#039;/g,"'")
   var final_inquestion3 = final_inquestion2.replace(/&ldquo;/g,"'")
   var final_inquestion4 = final_inquestion3.replace(/&rdquo;/g,"'")
-  var incorect_answer_list = final_inquestion4.split(",")
+  var final_inquestion5 = final_inquestion4.replace("&","")
+  var final_inquestion6 =final_inquestion5.replace(";","")
+
+
+  var incorect_answer_list = final_inquestion6.split(",")
+  console.log(localStorage.getItem("correct_answer"))
+  console.log(localStorage.getItem("incorrect_answer"))
+  console.log(localStorage.getItem("questions"))
   console.log(correct_answer_list)
   console.log(question_list)
+  console.log(incorect_answer_list)
   const sleep = async (milliseconds) => {
     await new Promise(resolve => {
         return setTimeout(resolve, milliseconds)
