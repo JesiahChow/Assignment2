@@ -4,8 +4,8 @@ Team Frosty
 Jesiah and Mikhail P02
 <br>
 Design Process:
-For our assignment 2, we will be doing a trivia quiz both suitable for the elderly and younger generations like us. It will be fun and educational quiz for all ages to learn and at the same time improve their general knowledge and train their mind. There will be a total of 10 questions of 2 different topics to choose from.<br>
-The topics are general knowledge and politics.There will be a range of difficulties ranging from easy, medium to hard.
+For our assignment 2, we will be doing a trivia quiz both suitable for the elderly and younger generations like us. It will be fun and educational quiz for all ages to learn and at the same time improve their general knowledge and train their mind. There will be a total of 10 questions of 3 different topics to choose from.<br>
+The topics are general knowledge, sports and politics.There will be a range of difficulties ranging from easy, medium to hard.
 
 There will be a total of 4 pages.
 
