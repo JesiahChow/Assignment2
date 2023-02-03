@@ -53,3 +53,7 @@ recolored broken heart icon and made stopwatch icon using adobe photoshop
 The fonts are taken from:
 
 - https://fonts.google.com/specimen/Kanit?preview.text=Who%20scored%20against%20Real%20Madrid%3F&preview.text_type=custom
+
+The audios are taken from:
+
+- https://orangefreesounds.com/?s=countdown
