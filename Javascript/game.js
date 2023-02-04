@@ -2,6 +2,8 @@ $(document).ready(function () {
     getQuestions();
     //console.log(questions[0])
     //console.log(incorrect_answer)
+    var correct_sound = new Audio ("Audio/Game-show-correct-answer.mp3")
+    var incorrect_sound = new Audio("Audio/Incorrect-sound-effect.mp3")
     let i = 0;
     let j = 0;
     let score = 0;
@@ -134,10 +136,12 @@ $(document).ready(function () {
            if (this.id == set_place)
            {
              $(document.getElementById(this.id)).addClass("correct")
+             correct_sound.play()
              score += 10
              score_heading.textContent = score
            }else{
             $(document.getElementById(this.id)).addClass("incorrect")
+            incorrect_sound.play()
             if (set_place == "choice1")
             {
               $(document.getElementById("selection1")).addClass("correct")
@@ -164,10 +168,12 @@ $(document).ready(function () {
            if (this.id == set_place)
            {
             $(document.getElementById(this.id)).addClass("correct")
+            correct_sound.play()
             score += 10
             score_heading.textContent = score
           }else{
             $(document.getElementById(this.id)).addClass("incorrect")
+            incorrect_sound.play()
             if (set_place == "choice1")
             {
               $(document.getElementById("selection1")).addClass("correct")
@@ -195,10 +201,12 @@ $(document).ready(function () {
            if (this.id == set_place)
            {
             $(document.getElementById(this.id)).addClass("correct")
+            correct_sound.play()
             score += 10
             score_heading.textContent = score
           }else{
             $(document.getElementById(this.id)).addClass("incorrect")
+            incorrect_sound.play()
             if (set_place == "choice1")
             {
               $(document.getElementById("selection1")).addClass("correct")
@@ -225,10 +233,12 @@ $(document).ready(function () {
            if (this.id == set_place)
            {
             $(document.getElementById(this.id)).addClass("correct")
+            correct_sound.play()
             score += 10
             score_heading.textContent = score
           }else{
             $(document.getElementById(this.id)).addClass("incorrect")
+            incorrect_sound.play()
             if (set_place == "choice1")
             {
               $(document.getElementById("selection1")).addClass("correct")
@@ -263,15 +273,11 @@ $(document).ready(function () {
     i++
     j += 3
     $()
-  }, 1000)
+  }, 5000)
   setTimeout(() => {
+    console.log("active")
     $(elements).removeClass('correct')
     $(elements).removeClass('incorrect')
-    if (i != 1)
-    {
-    question_count ++
-    question_heading.textContent = question_count + "/10"
-    }
   }, 1000)
   }
 
@@ -317,10 +323,12 @@ $(document).ready(function () {
            if (this.id == set_place)
            {
              $(document.getElementById(this.id)).addClass("correct")
+             correct_sound.play()
              score += 10
              score_heading.textContent = score
             }else{
               $(document.getElementById(this.id)).addClass("incorrect")
+              incorrect_sound.play()
               if (set_place == "choice1")
               {
                 $(document.getElementById("selection1")).addClass("correct")
@@ -347,10 +355,12 @@ $(document).ready(function () {
            if (this.id == set_place)
            {
             $(document.getElementById(this.id)).addClass("correct")
+            correct_sound.play()
             score += 10
             score_heading.textContent = score
           }else{
             $(document.getElementById(this.id)).addClass("incorrect")
+            incorrect_sound.play()
             if (set_place == "choice1")
             {
               $(document.getElementById("selection1")).addClass("correct")
@@ -377,10 +387,12 @@ $(document).ready(function () {
            if (this.id == set_place)
            {
             $(document.getElementById(this.id)).addClass("correct")
+            correct_sound.play()
             score += 10
             score_heading.textContent = score
           }else{
             $(document.getElementById(this.id)).addClass("incorrect")
+            incorrect_sound.play()
             if (set_place == "choice1")
             {
               $(document.getElementById("selection1")).addClass("correct")
@@ -407,10 +419,12 @@ $(document).ready(function () {
            if (this.id == set_place)
            {
             $(document.getElementById(this.id)).addClass("correct")
+            correct_sound.play()
              score += 10
              score_heading.textContent = score
           }else{
             $(document.getElementById(this.id)).addClass("incorrect")
+            incorrect_sound.play()
             if (set_place == "choice1")
             {
               $(document.getElementById("selection1")).addClass("correct")
@@ -449,8 +463,9 @@ $(document).ready(function () {
 
     i++
     j += 3
-  },1000)
+  },2000)
   setTimeout(() => {
+    console.log("active2")
     $(elements).removeClass('correct')
     $(elements).removeClass('incorrect')
     if (i != 1)
@@ -458,7 +473,7 @@ $(document).ready(function () {
     question_count ++
     question_heading.textContent = question_count + "/10"
     }
-  }, 1000)
+  }, 2000)
     console.log(i)
     if (i == 10)
     {
