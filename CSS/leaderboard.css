@@ -1,4 +1,33 @@
+
 .leaderboard{
     display: flex;
     justify-content: center;
 }
+table{
+    width: 100%;
+    
+}
+table,th,td{
+   border: 1px solid black; 
+   font-size: 25px;
+   margin:103px;
+   border-collapse: collapse;
+   
+    
+}
+th,td{
+   
+    padding: 25px;
+  }
+  
+@media (max-width:600px)
+  {
+      .leaderboard,table{
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      th,td{
+        margin: 20px;
+      }
+  
+  }
