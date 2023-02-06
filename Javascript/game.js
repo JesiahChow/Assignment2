@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  getQuestions();
+
   //console.log(questions[0])
   //console.log(incorrect_answer)
   var timer = document.getElementById("round-time-bar")
@@ -14,9 +14,19 @@ $(document).ready(function () {
   let score = 0;
   let question_count = 1;
   var score_heading = document.getElementById("score")
-  var question_heading = document.getElementById("questionCounter")
+var question_heading = document.getElementById("questionCounter")
 var elements = document.getElementsByClassName("choice-container");
-var question = localStorage.getItem("questions")
+
+
+while (true)
+{
+  getQuestions();
+  var question = localStorage.getItem("questions")
+  var correct_answer = localStorage.getItem("correct_answer")
+  var incorrect_answer = localStorage.getItem("incorrect_answer")
+
+
+
 //format each question
 
 var final_question = question.replace(/&quot;/g,'"')
@@ -64,9 +74,10 @@ if(question_list.length > 10)
 {
   question_list.splice(1,1)
 }
+
 // ? ,
 
-var correct_answer = localStorage.getItem("correct_answer")
+
 
 var answer1 = correct_answer.replace(/&quot;/g,'"')
 var answer2 = answer1.replace(/&#039;/g,"'")
@@ -78,7 +89,7 @@ var answer5 = answer4.replace("&","")
 var answer6 = answer5.replace(";","")
 
 var correct_answer_list = answer6.split(",")
-var incorrect_answer = localStorage.getItem("incorrect_answer")
+
 
 
 
@@ -98,6 +109,18 @@ console.log(localStorage.getItem("questions"))
 console.log(correct_answer_list)
 console.log(question_list)
 console.log(incorect_answer_list)
+
+
+if (correct_answer_list.length == 10 && question_list.length == 10 && incorect_answer_list.length == 30)
+{
+  break
+}else
+{
+localStorage.removeItem("incorrect_answer")
+localStorage.removeItem("correct_answer")
+localStorage.removeItem("questions")
+}
+}
 const sleep = async (milliseconds) => {
   await new Promise(resolve => {
       return setTimeout(resolve, milliseconds)
@@ -135,12 +158,12 @@ if (i ==0)
   var reply_click = function()
   {
     clearTimeout(timeoutId)
-    console.log(skip_sound)
       if (this.id == "selection1")
       {
          this.id = "choice1"
-         if (this.id == set_place)
+         if (this.id == set_place && skip_sound == false)
          {
+            console.log("active")
            $(document.getElementById(this.id)).addClass("correct")
            if (skip_sound == false)
            {
@@ -268,7 +291,7 @@ if (i ==0)
          //alert(this.id)
          this.id = "selection4"
       }
-      skip_sound = false
+
 
   }
   document.getElementById('choice1').onclick = reply_click;
@@ -300,13 +323,13 @@ if (i ==0)
     if (set_place == "choice1")
     {
       skip_sound = true
-      score -= 10
     }
     const move_to_next_question = document.getElementById('choice1')
     move_to_next_question.click();
     $(elements).removeClass('incorrect')
 
     score_heading.textContent = score
+    skip_sound = false
   },10000)
   i++
   j += 3
@@ -316,6 +339,7 @@ setTimeout(() => {
   console.log("active")
   $(elements).removeClass('correct')
   $(elements).removeClass('incorrect')
+  skip_sound = false
 }, 1000)
 }
 
@@ -355,17 +379,14 @@ $(".choice-container").click(function () {
   var reply_click = function()
   {
     clearTimeout(timeoutId)
+    console.log(skip_sound)
       if (this.id == "selection1")
       {
          this.id = "choice1"
-         console.log(skip_sound)
-         if (this.id == set_place)
+         if (this.id == set_place && skip_sound == false)
          {
            $(document.getElementById(this.id)).addClass("correct")
-           if (skip_sound == false)
-           {
             correct_sound.play()
-           }
            score += 10
            score_heading.textContent = score
           }else{
@@ -487,7 +508,6 @@ $(".choice-container").click(function () {
          //alert(this.id)
          this.id = "selection4"
       }
-      skip_sound = false
 
 
   }
@@ -521,13 +541,13 @@ $(".choice-container").click(function () {
     if (set_place == "choice1")
     {
       skip_sound = true
-      score -= 10
     }
     const move_to_next_question = document.getElementById('choice1')
     move_to_next_question.click();
     $(elements).removeClass('incorrect')
 
     score_heading.textContent = score
+
   },10000)
 
 
@@ -541,6 +561,7 @@ setTimeout(() => {
   console.log("active2")
   $(elements).removeClass('correct')
   $(elements).removeClass('incorrect')
+  skip_sound = false
   if (i != 1)
   {
   question_count ++
