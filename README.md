@@ -9,6 +9,7 @@ The topics are general knowledge, sports and politics.There will be a range of d
 
 There will be a total of 4 pages.
 
+- Start page
 - Homepage
 - Game menu
 - Gameplay
@@ -20,7 +21,7 @@ Adobe XD Wireframe for computer layout: https://xd.adobe.com/view/bdda8c82-dadf-
 
 Features:
 
-- There will be a few interactive buttons that will be available for users such as the 'Play', 'Settings' and 'Leaderboard' buttons
+- There will be a few interactive buttons that will be available for users such as the 'Play' and 'Leaderboard' buttons
 
 - There will be 3 hearts which are 3 chances given. If you answer the question wrongly 3 times, no points will be awarded and the game will end.
 
@@ -40,9 +41,13 @@ Technologies Used:
 
 Testing:
 
-- The user can select their desired settings for the quiz
+- The login and signup form should be validated
 - The user should be able to gain points, lose by lives or running out of time, and win by finishing the quiz
 - The user should be able to see themselves in the leaderboards and others
+
+Bugs:
+
+- While doing this assignment, we ran across this bug where we added audio for our background music. When we ran the start page unto live server<br> there was no sound. It is only when we move to another page and back to the start page then there is sound which we find a little weird.
 
 Credits:
 The APIs are taken from https://opentdb.com/api_config.php
