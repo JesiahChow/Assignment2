@@ -55,7 +55,7 @@ function makeQuestions (){
     var question = localStorage.getItem("questions")
     var correct_answer = localStorage.getItem("correct_answer")
     var incorrect_answer = localStorage.getItem("incorrect_answer")
-    console.log(localStorage.getItem("questions"))
+
 
 
 
@@ -71,7 +71,7 @@ function makeQuestions (){
   final_question = final_question.replace('"Goldbricking",','"Goldbricking" ')
   final_question = final_question.replace('? ,','  ?,')
   final_question = final_question.replace('?','?, ')
-  final_question = final_question.replace("Llanfairshy;pwllgwyngyll&shy;gogery&shy;chwyrn&shy;drobwll&shy;llan&shy;tysilio&shy;gogo&shy;goch",'llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch')
+  
 
   var final_question2 = final_question.replace(/&#039;/g,"'")
   var final_question3 = final_question2.replace(/&ldquo;/g,"'")
@@ -85,11 +85,22 @@ function makeQuestions (){
   var final_question11 = final_question10.replace(/&rsquo;/g,"'")
   var final_question12 = final_question11.replace("&","")
   var final_question13 = final_question12.replace('",','"')
+  final_question13 = final_question13.replace(",F","F")
+  final_question13 = final_question13.replace(", W",",W")
+  final_question13 = final_question13.replace(",O","O")
+  final_question13 = final_question13.replace(",H","H")
+  final_question13 = final_question13.replace(",I",",I")
+  final_question13 = final_question13.replace("    ,","")
+  final_question13 = final_question13.replace("  ,","")
+  final_question13 = final_question13.replace(" ,","")
+  final_question13 = final_question13.replace('Llanfairshy;pwllgwyngyll&shy;gogery&shy;chwyrn&shy;drobwll&shy;llan&shy;tysilio&shy;gogo&shy;goch','llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch')
   //final_question13 = final_question13.replace('?   ,',' ?,')
 
+  console.log(final_question13)
   question_list = final_question13.split("?,")
   if (question_list.length < 10)
   {
+    console.log("yes")
     var final_question5 = final_question4.replace("? ","?")
     var final_question6 = final_question5.replace(/cute;/g,"'")
     var final_question7 = final_question6.replace(".,",",")
@@ -99,8 +110,11 @@ function makeQuestions (){
     var final_question11 = final_question10.replace(";',","?,")
     var final_question12 = final_question11.replace(/&rsquo;/g,"'")
     var final_question13 = final_question12.replace("&","")
-  // final_question13 = final_question13.replace('?   ,',' ?,')
     var final_question14 = final_question13.replace('",','" ?,')
+    final_question14 = final_question14.replace("    ,","")
+    final_question14 = final_question14.replace("  ,","")
+    final_question14 = final_question14.replace(" ,","")
+    console.log(final_question14)
     question_list = final_question14.split("?,")
     
   }
@@ -396,9 +410,10 @@ setTimeout(() => {
 $(".choice-container").click(function () {
 
 
+
   if (i < 11)
   {
-
+    console.log(i)
     setTimeout(() => {
   let selection = ["choice1","choice2","choice3","choice4"]
   document.getElementById("question").textContent = question_list[i ]  
@@ -602,33 +617,38 @@ $(".choice-container").click(function () {
   i++
   j += 3
 },2000)
-setTimeout(() => {
-  $(elements).removeClass('overlay')
-  console.log("active2")
-  $(elements).removeClass('correct')
-  $(elements).removeClass('incorrect')
-  incorrect_sound.pause();
-  incorrect_sound.currentTime = 0
-  correct_sound.pause();
-  correct_sound.currentTime = 0
-  skip_sound = false
-  if (i != 1)
-  {
-  question_count ++
-  question_heading.textContent = question_count + "/10"
-  }
-}, 2000)
-  console.log(i)
-  if (i == 10)
-  {
-    window.open("leaderboard.html")
-    localStorage.removeItem("incorrect_answer")
-    localStorage.removeItem("correct_answer")
-    localStorage.removeItem("questions")
-  }
-  }
+  setTimeout(() => {
+    $(elements).removeClass('overlay')
+    console.log("active2")
+    $(elements).removeClass('correct')
+    $(elements).removeClass('incorrect')
+    incorrect_sound.pause();
+    incorrect_sound.currentTime = 0
+    correct_sound.pause();
+    correct_sound.currentTime = 0
+    skip_sound = false
+    if (i != 1)
+    {
+    question_count ++
+    question_heading.textContent = question_count + "/10"
+    }
+    if (i >= 10)
+    {
   
-})
+      window.location = 'leaderboard.html'
+      localStorage.removeItem("incorrect_answer")
+      localStorage.removeItem("correct_answer")
+      localStorage.removeItem("questions")
+    }
+  
+
+  }, 2000)
+
+    }
+
+    
+  })
+
 
 })
 
