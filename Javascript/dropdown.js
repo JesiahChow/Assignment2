@@ -2,6 +2,11 @@
 const start_button = document.querySelectorAll('.button2');
 
 const dropdowns = document.querySelectorAll('.dropdown');
+
+localStorage.removeItem("incorrect_answer")
+localStorage.removeItem("correct_answer")
+localStorage.removeItem("questions")
+
 //Loop through all dropdown elements
 dropdowns.forEach(dropdown =>{
     //Get inner elements from each dropdown
@@ -50,6 +55,8 @@ dropdowns.forEach(dropdown =>{
     
 
 });
+
+
 
 $(function () {
     //add css to disabled class to change button color

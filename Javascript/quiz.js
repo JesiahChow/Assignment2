@@ -1,12 +1,17 @@
 /*Mikhail*/
 
-function getQuestions(){
-    console.log("hi")
+
+
+    
+var getQuestions = function(){
+
   //get players info for leaderboard
   //need add arguments for FUTURE
-    let questions = [];
-    let incorrect_answer = []
-    let correct_answer = []
+  let questions = [];
+  let incorrect_answer = []
+  let correct_answer = []
+  let data = []
+
     var i = 0;
 
     //variables for url
@@ -62,13 +67,15 @@ function getQuestions(){
                 answer: loadedQuestion.correct_answer,
                 incorrect_answer : loadedQuestion.incorrect_answers
             };
-
             questions[i] = formattedQuestion.question
             correct_answer[i] = formattedQuestion.answer
             incorrect_answer[i] = formattedQuestion.incorrect_answer
+            
+            
+
             i++
 
-            if (i <= 10)
+            if (i == 10)
             {
               let text = questions.toString(',')
               localStorage.setItem("questions",text)
@@ -76,15 +83,14 @@ function getQuestions(){
               localStorage.setItem("correct_answer",text2)
               let text3 = incorrect_answer.toString(',')
               localStorage.setItem("incorrect_answer",text3)
-            }
+            } 
 
-
-            return formattedQuestion;
 
         })
       })
 
- 
+
+
       //console.log(questions[0])
       //console.log(incorrect_answer)
   }

@@ -1,4 +1,30 @@
+
+
 $(document).ready(function () {
+  let myPromise = new Promise(function(myResolve, myReject) {
+    // "Producing Code" (May take some time)
+
+    getQuestions()
+    setTimeout(() =>{
+    makeQuestions();
+    },1000)
+    if (correct_answer_list.length == 10 && question_list.length == 10 && incorect_answer_list.length == 30)
+    {
+      myResolve("success"); 
+    }else{
+      myReject("failure");
+    }// when successful
+ // when error
+    });
+    
+    // "Consuming Code" (Must wait for a fulfilled Promise)
+    myPromise.then(
+      function(value) {},
+      function(error) {}
+    );
+
+
+  
 
   //console.log(questions[0])
   //console.log(incorrect_answer)
@@ -15,18 +41,22 @@ $(document).ready(function () {
   var score_heading = document.getElementById("score")
 var question_heading = document.getElementById("questionCounter")
 var elements = document.getElementsByClassName("choice-container");
+var question_list = [];
+var correct_answer_list =[];
+var incorect_answer_list = [];
 
 
-while (true)
-{
 
-    getQuestions();
+
+
+
+function makeQuestions (){
     var question = localStorage.getItem("questions")
     var correct_answer = localStorage.getItem("correct_answer")
     var incorrect_answer = localStorage.getItem("incorrect_answer")
-    console.log(localStorage.getItem("correct_answer"))
-    console.log(localStorage.getItem("incorrect_answer"))
     console.log(localStorage.getItem("questions"))
+
+
 
 
   //format each question
@@ -56,7 +86,7 @@ while (true)
   var final_question13 = final_question12.replace('",','"')
   //final_question13 = final_question13.replace('?   ,',' ?,')
 
-  var question_list = final_question13.split("?,")
+  question_list = final_question13.split("?,")
   if (question_list.length < 10)
   {
     var final_question5 = final_question4.replace("? ","?")
@@ -91,7 +121,7 @@ while (true)
   var answer5 = answer4.replace("&","")
   var answer6 = answer5.replace(";","")
 
-  var correct_answer_list = answer6.split(",")
+  correct_answer_list = answer6.split(",")
 
 
 
@@ -102,26 +132,26 @@ while (true)
   var final_inquestion3 = final_inquestion2.replace(/&ldquo;/g,"'")
   var final_inquestion4 = final_inquestion3.replace(/&rdquo;/g,"'")
   var final_inquestion5 = final_inquestion4.replace("&","")
-  var final_inquestion6 =final_inquestion5.replace(";","")
+  var final_inquestion6 = final_inquestion5.replace(";","")
 
 
-  var incorect_answer_list = final_inquestion6.split(",")
-
-  console.log(correct_answer_list)
-  console.log(question_list)
-  console.log(incorect_answer_list)
+  incorect_answer_list = final_inquestion6.split(",")
 
 
-  if (correct_answer_list.length == 10 && question_list.length == 10 && incorect_answer_list.length == 30)
-  {
-      break
-  }else
-  {
-    localStorage.removeItem("incorrect_answer")
-    localStorage.removeItem("correct_answer")
-    localStorage.removeItem("questions")
-  }
+  
+
+
+
+console.log(correct_answer_list)
+console.log(question_list)
+console.log(incorect_answer_list)
+
 }
+
+
+
+
+
 const sleep = async (milliseconds) => {
   await new Promise(resolve => {
       return setTimeout(resolve, milliseconds)
@@ -136,6 +166,10 @@ const sleep = async (milliseconds) => {
 if (i ==0)
 {
   setTimeout(() => {
+    if (correct_answer_list.length != 10 || question_list.length != 10 || incorect_answer_list.length != 30)
+    {
+      window.location.reload();
+    }
     $(timer).show();
   console.log(i)
   let selection = ["choice1","choice2","choice3","choice4"]
@@ -336,7 +370,7 @@ if (i ==0)
   i++
   j += 3
   $()
-}, 0)
+}, 2000)
 setTimeout(() => {
   $(elements).removeClass('overlay')
   $(elements).removeClass('correct')
@@ -580,9 +614,7 @@ setTimeout(() => {
   
 })
 
-
 })
-
 
 //REMOVE LOCAL STORAGE TO GET ACCURATE QUESTIONS
 
