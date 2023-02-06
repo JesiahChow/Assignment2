@@ -13,6 +13,7 @@ function formValidation(){
       document.querySelector("#name").value = "";
       document.querySelector("#password").value = "";
       alert("You have signed in!");
+      
     }
 }
   /*Form validation for login*/ 

@@ -175,8 +175,13 @@ body{
 }
 @media (max-width:600px)
 {
-    .context,.buttons{
+    .context{
         margin: 20px;
+        flex-direction: column;
+        margin-right: 35px;
+        justify-content: center;
+    }
+    .buttons{
         flex-direction: column;
         justify-content: center;
     }

@@ -8,52 +8,89 @@
     <link rel = "stylesheet" type="text/css" href="CSS/normalize.css">
     <link rel="stylesheet" type="text/css" href="CSS/leaderboard.css">
     <link rel="stylesheet" type="text/css" href="CSS/style.css">
-
+    <script src="/Assignment2/Javascript/dropdown.js" defer></script>
 </head>
 <body>
+      <!--Background audio-->
+      <audio autoplay loop>
+        <source src="/Assignment2/Audio/Marimba-music.mp3" type="audio/mpeg">
+      </audio>
+
     <div class="button1">
         <a href="home.html">Back to home</a>
     </div>
 <!--Leaderboard table-->
-
+<div class="dropdown-options">
+  <div class="dropdown">
+      <div class="select">
+          <p style="font-size: 22px;">Category</p>
+          <span class="selected" id="option1"></span>
+          <div class="caret"></div>
+      </div>
+      <ul class="list">
+          <li id="sel1">General Knowledge</li>
+          <li id="sel2">Sports</li>
+          <li id ="sel3">Politics</li>
+      </ul>
+  </div>
+  <div class="dropdown">
+      <div class="select">
+          <p style="font-size: 22px;">Difficulty</p>
+          <span class="selected" id="option2"></span>
+          <div class="caret"></div>
+      </div>
+      <ul class="list">
+          <li id ="sel4">Easy</li>
+          <li id ="sel5">Medium</li>
+          <li id ="sel6">Hard</li>
+      </ul>
+  </div>
+</div>
+<br><br>
    <div class="leaderboard">
         <table>
             <caption>M & J Quizzes Leaderboard</caption>
             <tr>
-            <th id="position">Position</th>
-              <th id="leaderboard-name">Name</th>
-              <th id="leaderboard-score">Score</th>
+              <th id = "position">Rank</th>
+              <th id ="leaderboard-name">Name</th>
+              <th id = "leaderboard-score">Score</th>
+              <th id = "leaderboard-lives">Lives</th>
       
              
             </tr>
             <tr>
-              <td id="position1"></td>
-              <td id="name1"></td>
-              <td id="score1"></td>
+              <td id = "position1"></td>
+              <td id = "name1"></td>
+              <td id = "score1"></td>
+              <td id = "lives1"></td>
               
             </tr>
             <tr>
-              <td id="position2"></td>
-              <td id="name2"></td>
-              <td id="score2"></td>
+              <td id = "position2"></td>
+              <td id = "name2"></td>
+              <td id = "score2"></td>
+              <td id = "lives2"></td>
           
             </tr>
             <tr>
-                <td id="position3"></td>
-                <td id="name3"></td>
-                <td id="score3"></td>
+                <td id = "position3"></td>
+                <td id = "name3"></td>
+                <td id = "score3"></td>
+                <td id = "lives3"></td>
             
               </tr>
               <tr>
-                <td id="position4"></td>
-                <td id="name4"></td>
-                <td id="score4"></td>
+                <td id = "position4"></td>
+                <td id = "name4"></td>
+                <td id = "score4"></td>
+                <td id = "lives5"></td>
             
               </tr>
               <tr>
                 <td id="position5"></td>
                 <td id="name5"></td>
                 <td id="score5"></td>
+                <td id = "lives5"></td>
             
               </tr>
           </table>

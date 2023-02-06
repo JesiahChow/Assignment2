@@ -72,7 +72,7 @@ justify-content: center;
 footer{
     padding: 50px;
     color: black;
-    background-color: rgb(17, 21, 129);
+    background-color: rgb(10, 0, 83);
    display: flex;
    justify-content: center;
    
@@ -81,41 +81,44 @@ footer{
 }
 .button1
 {
-    background-color: rgb(248, 76, 76);
-    display: inline-flex;
-    justify-content: space-between;
+    display: flex;
+    justify-content:center;
     text-align: center;
-    border: 20px;
-    border-radius: 20px;
-    font-size: 20px;
-    margin: 20px;
+    flex-direction: row;
+
 }
-.button1 a
+.button1 .back-button
 { 
     text-decoration: none;
     padding: 27px 68px;
     color: black;
-    
-
+    background-color: rgb(248, 76, 76);
+    text-align: center;
+    border: 20px;
+    border-radius: 20px;
+    margin: 20px;
+    font-size: 20px;
 }
 .button1 a:hover{
     background-color: rgb(18, 184, 255);
     padding: 27px 68px;
     border-radius: 20px;
 }
-.button2
-{
-    background-color: rgb(248, 76, 76);
-    display: inline-flex;
-    text-align: center;
+.start-button{
+    display: flex;
     justify-content: center;
+    margin: 2px 3px 2px 2px;
+
+}
+.start-button .button2 {
+    background-color: rgb(248, 76, 76);
+    text-align: center;
     border: 20px;
     border-radius: 20px;
     margin: 20px;
-    float: right;
     font-size: 20px;
     text-decoration: none;
-    padding: 27px 68px;
+    padding:27px 68px;
     color: black;
     
 }
@@ -132,10 +135,17 @@ footer{
     border-radius: 20px;
 
 }
+.text{
+    display: flex;
+    justify-content: center;
+    padding: 22px;
+    max-width: 100%;
+}
 .dropdown{
     min-width: 15em;
     position: relative;
     margin: 70px;
+
 }
 /*Dropdown button*/
 
@@ -143,6 +153,7 @@ footer{
     display: flex;
     justify-content: center;
     flex-direction: row;
+    padding: 20px;
 }
 .dropdown *{
     box-sizing: border-box;
@@ -155,7 +166,7 @@ footer{
     align-items: center;
     border:2px solid;
     border-radius: 0.5em;
-    padding: 20px;
+    padding: 10px;
     cursor: pointer;
     transition: background 0.3s;
 
@@ -176,7 +187,7 @@ footer{
 }
 .list{
    list-style:none ;
-   padding: 20px 30px;
+   padding: 20px;
    background-color: rgb(91, 66, 20);
    border: 1px solid;
    border-radius: 5px;
@@ -242,7 +253,7 @@ footer{
   }
   
   /* Full-width input fields */
-  .form-container input[type=email], .form-container input[type=password], .form-container input[type = name]{
+  .form-container input[type=email], .form-container input[type=password], .form-container input[type = text]{
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -311,17 +322,19 @@ footer{
     }
     .button1{
         flex-direction: row;
-    }
-    .button2
-    {
-        flex-direction: row;
-        margin: 24px;
-        
+        justify-content: center;
 
+    }
+    .start-button,.button2
+    {   
+        justify-content: center;
     }
     .dropdown-options{
         flex-direction: column;
-        margin: 50px;
+        margin: 18px;
+    }
+    .list{
+        width: 70%;
     }
     .form-popup{
         flex-direction: column;
@@ -329,5 +342,8 @@ footer{
     .quiz-container{
         flex-direction: column;
     }
+  .text{
+    flex-direction: column;
+  }
 
 }
