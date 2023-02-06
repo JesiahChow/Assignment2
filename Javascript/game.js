@@ -14,11 +14,11 @@ $(document).ready(function () {
       myResolve("success"); 
     }else{
       myReject("failure");
-    }// when successful
- // when error
+    }
+
     });
     
-    // "Consuming Code" (Must wait for a fulfilled Promise)
+
     myPromise.then(
       function(value) {},
       function(error) {}
@@ -26,9 +26,6 @@ $(document).ready(function () {
 
 
   
-
-  //console.log(questions[0])
-  //console.log(incorrect_answer)
   var timer = document.getElementById("round-time-bar")
   $(timer).hide();
   const bar = document.getElementsByClassName("round-time-bar");
@@ -114,6 +111,7 @@ function makeQuestions (){
     final_question14 = final_question14.replace("    ,","")
     final_question14 = final_question14.replace("  ,","")
     final_question14 = final_question14.replace(" ,","")
+    final_question14 = final_question14.replace('Llanfairshy;pwllgwyngyll&shy;gogery&shy;chwyrn&shy;drobwll&shy;llan&shy;tysilio&shy;gogo&shy;goch','llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch')
     console.log(final_question14)
     question_list = final_question14.split("?,")
     
@@ -123,7 +121,6 @@ function makeQuestions (){
     question_list.splice(1,1)
   }
 
-  // ? ,
 
 
 
@@ -135,7 +132,7 @@ function makeQuestions (){
   //answer4 = answer4.replace(", Inc,",",")
   var answer5 = answer4.replace("&","")
   var answer6 = answer5.replace(";","")
-
+  console.log(answer6)
   correct_answer_list = answer6.split(",")
 
 
