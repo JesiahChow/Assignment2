@@ -1,4 +1,5 @@
-
+$(document.getElementById("click-absorb")).hide();
+$(document.getElementById("load")).addClass("loader")
 
 $(document).ready(function () {
   let myPromise = new Promise(function(myResolve, myReject) {
@@ -165,11 +166,18 @@ const sleep = async (milliseconds) => {
 
 if (i ==0)
 {
+
+
+
   setTimeout(() => {
     if (correct_answer_list.length != 10 || question_list.length != 10 || incorect_answer_list.length != 30)
     {
       window.location.reload();
     }
+  },1000)
+  setTimeout(() => {
+    $(document.getElementById("load")).removeClass("loader")
+    $(document.getElementById("click-absorb")).show();
     $(timer).show();
   console.log(i)
   let selection = ["choice1","choice2","choice3","choice4"]
@@ -375,8 +383,12 @@ setTimeout(() => {
   $(elements).removeClass('overlay')
   $(elements).removeClass('correct')
   $(elements).removeClass('incorrect')
+  incorrect_sound.pause();
+  incorrect_sound.currentTime = 0
+  correct_sound.pause();
+  correct_sound.currentTime = 0
   skip_sound = false
-}, 1000)
+}, 2000)
 }
 
 //add click listener
@@ -595,6 +607,10 @@ setTimeout(() => {
   console.log("active2")
   $(elements).removeClass('correct')
   $(elements).removeClass('incorrect')
+  incorrect_sound.pause();
+  incorrect_sound.currentTime = 0
+  correct_sound.pause();
+  correct_sound.currentTime = 0
   skip_sound = false
   if (i != 1)
   {
