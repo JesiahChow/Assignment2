@@ -1,6 +1,7 @@
 /*Mikhail*/
 
 function getQuestions(){
+    console.log("hi")
   //get players info for leaderboard
   //need add arguments for FUTURE
     let questions = [];

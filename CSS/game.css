@@ -132,3 +132,6 @@ h1{
   .round-time-bar[data-style="fixed"] div {
     width: calc(var(--duration) * 5%);
   }
+  .overlay {
+    pointer-events: none;
+}

@@ -5,7 +5,6 @@ $(document).ready(function () {
   var timer = document.getElementById("round-time-bar")
   $(timer).hide();
   const bar = document.getElementsByClassName("round-time-bar");
-  var werid_name = "Llanfairshy;pwllgwyngyll&shy;gogery&shy;chwyrn&shy;drobwll&shy;llan&shy;tysilio&shy;gogo&shy;goch"
   var skip_sound = false
   var correct_sound = new Audio ("Audio/Game-show-correct-answer.mp3")
   var incorrect_sound = new Audio("Audio/Incorrect-sound-effect.mp3")
@@ -20,106 +19,108 @@ var elements = document.getElementsByClassName("choice-container");
 
 while (true)
 {
-  getQuestions();
-  var question = localStorage.getItem("questions")
-  var correct_answer = localStorage.getItem("correct_answer")
-  var incorrect_answer = localStorage.getItem("incorrect_answer")
+
+    getQuestions();
+    var question = localStorage.getItem("questions")
+    var correct_answer = localStorage.getItem("correct_answer")
+    var incorrect_answer = localStorage.getItem("incorrect_answer")
+    console.log(localStorage.getItem("correct_answer"))
+    console.log(localStorage.getItem("incorrect_answer"))
+    console.log(localStorage.getItem("questions"))
 
 
+  //format each question
 
-//format each question
+  var final_question = question.replace(/&quot;/g,'"')
+  final_question = final_question.replace('";,',",")
+  final_question = final_question.replace('";',"?")
+  final_question = final_question.replace('?W',"?,W")
+  final_question = final_question.replace('hellip;',".....")
+  final_question = final_question.replace('envious",',"envious ")
+  final_question = final_question.replace('"Goldbricking",','"Goldbricking" ')
+  final_question = final_question.replace('? ,','  ?,')
+  final_question = final_question.replace('?','?, ')
+  final_question = final_question.replace("Llanfairshy;pwllgwyngyll&shy;gogery&shy;chwyrn&shy;drobwll&shy;llan&shy;tysilio&shy;gogo&shy;goch",'llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch')
 
-var final_question = question.replace(/&quot;/g,'"')
-final_question = final_question.replace('";,',",")
-final_question = final_question.replace('";',"?")
-final_question = final_question.replace('?W',"?,W")
-final_question = final_question.replace('hellip;',".....")
-final_question = final_question.replace('envious",',"envious ")
-final_question = final_question.replace('"Goldbricking",','"Goldbricking" ')
-final_question = final_question.replace('? ,','  ?,')
-final_question = final_question.replace('?','?, ')
-
-var final_question2 = final_question.replace(/&#039;/g,"'")
-var final_question3 = final_question2.replace(/&ldquo;/g,"'")
-var final_question4 = final_question3.replace(/&rdquo;/g,"'")
-var final_question5 = final_question4.replace(/cute;/g,"'")
-var final_question6 = final_question5.replace(/cute;/g,"'")
-var final_question7 = final_question6.replace(".,","?,")
-var final_question8 = final_question7.replace("%","")
-var final_question9 = final_question8.replace("a'","")
-var final_question10 = final_question9.replace(".',","?")
-var final_question11 = final_question10.replace(/&rsquo;/g,"'")
-var final_question12 = final_question11.replace("&","")
-var final_question13 = final_question12.replace('",','"')
-//final_question13 = final_question13.replace('?   ,',' ?,')
-
-var question_list = final_question13.split("?,")
-if (question_list.length < 10)
-{
-  var final_question5 = final_question4.replace("? ","?")
+  var final_question2 = final_question.replace(/&#039;/g,"'")
+  var final_question3 = final_question2.replace(/&ldquo;/g,"'")
+  var final_question4 = final_question3.replace(/&rdquo;/g,"'")
+  var final_question5 = final_question4.replace(/cute;/g,"'")
   var final_question6 = final_question5.replace(/cute;/g,"'")
-  var final_question7 = final_question6.replace(".,",",")
+  var final_question7 = final_question6.replace(".,","?,")
   var final_question8 = final_question7.replace("%","")
   var final_question9 = final_question8.replace("a'","")
-  var final_question10 = final_question9.replace(".',","' ?,")
-  var final_question11 = final_question10.replace(";',","?,")
-  var final_question12 = final_question11.replace(/&rsquo;/g,"'")
-  var final_question13 = final_question12.replace("&","")
- // final_question13 = final_question13.replace('?   ,',' ?,')
-  var final_question14 = final_question13.replace('",','" ?,')
-  question_list = final_question14.split("?,")
-  
-}
-if(question_list.length > 10)
-{
-  question_list.splice(1,1)
-}
+  var final_question10 = final_question9.replace(".',","?")
+  var final_question11 = final_question10.replace(/&rsquo;/g,"'")
+  var final_question12 = final_question11.replace("&","")
+  var final_question13 = final_question12.replace('",','"')
+  //final_question13 = final_question13.replace('?   ,',' ?,')
 
-// ? ,
+  var question_list = final_question13.split("?,")
+  if (question_list.length < 10)
+  {
+    var final_question5 = final_question4.replace("? ","?")
+    var final_question6 = final_question5.replace(/cute;/g,"'")
+    var final_question7 = final_question6.replace(".,",",")
+    var final_question8 = final_question7.replace("%","")
+    var final_question9 = final_question8.replace("a'","")
+    var final_question10 = final_question9.replace(".',","' ?,")
+    var final_question11 = final_question10.replace(";',","?,")
+    var final_question12 = final_question11.replace(/&rsquo;/g,"'")
+    var final_question13 = final_question12.replace("&","")
+  // final_question13 = final_question13.replace('?   ,',' ?,')
+    var final_question14 = final_question13.replace('",','" ?,')
+    question_list = final_question14.split("?,")
+    
+  }
+  if(question_list.length > 10)
+  {
+    question_list.splice(1,1)
+  }
 
-
-
-var answer1 = correct_answer.replace(/&quot;/g,'"')
-var answer2 = answer1.replace(/&#039;/g,"'")
-var answer3 = answer2.replace(/&ldquo;/g,"'")
-var answer4 = answer3.replace(/&rdquo;/g,"'")
-//answer4 = answer4.replace(",2,",",")
-//answer4 = answer4.replace(", Inc,",",")
-var answer5 = answer4.replace("&","")
-var answer6 = answer5.replace(";","")
-
-var correct_answer_list = answer6.split(",")
-
-
-
+  // ? ,
 
 
-var final_inquestion = incorrect_answer.replace(/&quot;/g,'"')
-var final_inquestion2 = final_inquestion.replace(/&#039;/g,"'")
-var final_inquestion3 = final_inquestion2.replace(/&ldquo;/g,"'")
-var final_inquestion4 = final_inquestion3.replace(/&rdquo;/g,"'")
-var final_inquestion5 = final_inquestion4.replace("&","")
-var final_inquestion6 =final_inquestion5.replace(";","")
+
+  var answer1 = correct_answer.replace(/&quot;/g,'"')
+  var answer2 = answer1.replace(/&#039;/g,"'")
+  var answer3 = answer2.replace(/&ldquo;/g,"'")
+  var answer4 = answer3.replace(/&rdquo;/g,"'")
+  //answer4 = answer4.replace(",2,",",")
+  //answer4 = answer4.replace(", Inc,",",")
+  var answer5 = answer4.replace("&","")
+  var answer6 = answer5.replace(";","")
+
+  var correct_answer_list = answer6.split(",")
 
 
-var incorect_answer_list = final_inquestion6.split(",")
-console.log(localStorage.getItem("correct_answer"))
-console.log(localStorage.getItem("incorrect_answer"))
-console.log(localStorage.getItem("questions"))
-console.log(correct_answer_list)
-console.log(question_list)
-console.log(incorect_answer_list)
 
 
-if (correct_answer_list.length == 10 && question_list.length == 10 && incorect_answer_list.length == 30)
-{
-  break
-}else
-{
-localStorage.removeItem("incorrect_answer")
-localStorage.removeItem("correct_answer")
-localStorage.removeItem("questions")
-}
+
+  var final_inquestion = incorrect_answer.replace(/&quot;/g,'"')
+  var final_inquestion2 = final_inquestion.replace(/&#039;/g,"'")
+  var final_inquestion3 = final_inquestion2.replace(/&ldquo;/g,"'")
+  var final_inquestion4 = final_inquestion3.replace(/&rdquo;/g,"'")
+  var final_inquestion5 = final_inquestion4.replace("&","")
+  var final_inquestion6 =final_inquestion5.replace(";","")
+
+
+  var incorect_answer_list = final_inquestion6.split(",")
+
+  console.log(correct_answer_list)
+  console.log(question_list)
+  console.log(incorect_answer_list)
+
+
+  if (correct_answer_list.length == 10 && question_list.length == 10 && incorect_answer_list.length == 30)
+  {
+      break
+  }else
+  {
+    localStorage.removeItem("incorrect_answer")
+    localStorage.removeItem("correct_answer")
+    localStorage.removeItem("questions")
+  }
 }
 const sleep = async (milliseconds) => {
   await new Promise(resolve => {
@@ -158,6 +159,7 @@ if (i ==0)
   var reply_click = function()
   {
     clearTimeout(timeoutId)
+    $(elements).addClass('overlay')
       if (this.id == "selection1")
       {
          this.id = "choice1"
@@ -336,7 +338,7 @@ if (i ==0)
   $()
 }, 0)
 setTimeout(() => {
-  console.log("active")
+  $(elements).removeClass('overlay')
   $(elements).removeClass('correct')
   $(elements).removeClass('incorrect')
   skip_sound = false
@@ -371,21 +373,18 @@ $(".choice-container").click(function () {
   document.getElementById(set_place4).textContent = incorect_answer_list[j +2] 
   selection.splice(location4,1)
 
- 
-  console.log(set_place)
-  console.log(set_place2)
-  console.log(set_place3)
-  console.log(set_place4)
+
   var reply_click = function()
   {
     clearTimeout(timeoutId)
-    console.log(skip_sound)
+    console.log("active1")
+    $(elements).addClass('overlay')
       if (this.id == "selection1")
       {
          this.id = "choice1"
          if (this.id == set_place && skip_sound == false)
          {
-           $(document.getElementById(this.id)).addClass("correct")
+          $(document.getElementById(this.id)).addClass("correct")
             correct_sound.play()
            score += 10
            score_heading.textContent = score
@@ -558,6 +557,7 @@ $(".choice-container").click(function () {
   j += 3
 },2000)
 setTimeout(() => {
+  $(elements).removeClass('overlay')
   console.log("active2")
   $(elements).removeClass('correct')
   $(elements).removeClass('incorrect')
