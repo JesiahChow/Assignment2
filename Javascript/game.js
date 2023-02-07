@@ -35,6 +35,20 @@ $(document).ready(function () {
   let i = 0;
   let j = 0;
   let score = 0;
+  let increament = 0
+  let difficulty_selection = localStorage.getItem("option2");
+  if (difficulty_selection == "Easy")
+  {
+    increament = 5
+  }
+  else if (difficulty_selection == "Medium")
+  {
+    increament = 10
+  }
+  else if (difficulty_selection == "Hard")
+  {
+    increament = 20
+  }
   let question_count = 1;
   var score_heading = document.getElementById("score")
 var question_heading = document.getElementById("questionCounter")
@@ -225,7 +239,7 @@ if (i ==0)
            {
             correct_sound.play()
            }
-           score += 10
+           score += increament
            score_heading.textContent = score
          }else{
           $(document.getElementById(this.id)).addClass("incorrect")
@@ -257,7 +271,7 @@ if (i ==0)
          {
           $(document.getElementById(this.id)).addClass("correct")
           correct_sound.play()
-          score += 10
+          score += increament
           score_heading.textContent = score
         }else{
           $(document.getElementById(this.id)).addClass("incorrect")
@@ -290,7 +304,7 @@ if (i ==0)
          {
           $(document.getElementById(this.id)).addClass("correct")
           correct_sound.play()
-          score += 10
+          score += increament
           score_heading.textContent = score
         }else{
           $(document.getElementById(this.id)).addClass("incorrect")
@@ -322,7 +336,7 @@ if (i ==0)
          {
           $(document.getElementById(this.id)).addClass("correct")
           correct_sound.play()
-          score += 10
+          score += increament
           score_heading.textContent = score
         }else{
           $(document.getElementById(this.id)).addClass("incorrect")
@@ -445,7 +459,7 @@ $(".choice-container").click(function () {
          {
           $(document.getElementById(this.id)).addClass("correct")
             correct_sound.play()
-           score += 10
+            score += increament
            score_heading.textContent = score
           }else{
             $(document.getElementById(this.id)).addClass("incorrect")
@@ -477,7 +491,7 @@ $(".choice-container").click(function () {
          {
           $(document.getElementById(this.id)).addClass("correct")
           correct_sound.play()
-          score += 10
+          score += increament
           score_heading.textContent = score
         }else{
           $(document.getElementById(this.id)).addClass("incorrect")
@@ -509,7 +523,7 @@ $(".choice-container").click(function () {
          {
           $(document.getElementById(this.id)).addClass("correct")
           correct_sound.play()
-          score += 10
+          score += increament
           score_heading.textContent = score
         }else{
           $(document.getElementById(this.id)).addClass("incorrect")
@@ -541,7 +555,7 @@ $(".choice-container").click(function () {
          {
           $(document.getElementById(this.id)).addClass("correct")
           correct_sound.play()
-           score += 10
+          score += increament
            score_heading.textContent = score
         }else{
           $(document.getElementById(this.id)).addClass("incorrect")
