@@ -644,7 +644,7 @@ $(".choice-container").click(function () {
     question_count ++
     question_heading.textContent = question_count + "/10"
     }
-    if (i >= 10)
+    if (i > 10)
     {
   
       window.location = 'leaderboard.html'
