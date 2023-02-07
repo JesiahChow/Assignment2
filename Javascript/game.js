@@ -644,13 +644,28 @@ $(".choice-container").click(function () {
     question_count ++
     question_heading.textContent = question_count + "/10"
     }
+    if (i == 10)
+    {
+     let ranked = localStorage.getItem("option3")
+      if (ranked = "Yes")
+      {
+        let playername = localStorage.getItem("playername")
+        let playeremail = localStorage.getItem("playeremail")
+        let playerpassword = localStorage.getItem("playerpassword")
+        let playercategory = localStorage.getItem("option1")
+        let playerDifficulty = localStorage.getItem("option2")
+        console.log("reached")
+        uploadPlayerinfo(playername,playeremail,playerpassword,score,3,playercategory,playerDifficulty)
+      }
+    }
     if (i > 10)
     {
-  
-      window.location = 'leaderboard.html'
+      setTimeout(() => {
       localStorage.removeItem("incorrect_answer")
       localStorage.removeItem("correct_answer")
       localStorage.removeItem("questions")
+      window.location = 'leaderboard.html'
+      },10000)
     }
   
 

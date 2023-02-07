@@ -37,8 +37,18 @@ function formValidation(){
 
 
   function uploadPlayerinfo(name,email,password,score,lives,category,difficulty){
-    const APIKEY = "63d1f5f8a95709597409cf9c";
+    var APIKEY = "63d1f5f8a95709597409cf9c";
+    var url = "https://leaderboard-4a7a.restdb.io/rest/players"
+    if (document.URL.includes("http://127.0.0.1:5500/form.html") || document.URL.includes("http://127.0.0.1:5500/signup.html"))
+    {
+      //login
+      console.log("yes")
+      APIKEY = "63e2603c478852088da67e5c";
+      url =   "https://login-dc79.restdb.io/rest/players";
 
+    }
+
+//2 different APIKEY and url depending on webpage
     let player_info= [name,email,password,score,lives,category,difficulty] //test_player info
 
 
@@ -76,7 +86,7 @@ function formValidation(){
     let settings = {
       "async": true,
       "crossDomain": true,
-      "url": "https://leaderboard-4a7a.restdb.io/rest/players",
+      "url": url,
       "method": "POST", //[cher] we will use post to send info
       "headers": {
         "content-type": "application/json",
@@ -117,12 +127,21 @@ function formValidation(){
     var found_name = false;
 
 
-    const APIKEY = "63d1f5f8a95709597409cf9c";
+    var APIKEY = "63d1f5f8a95709597409cf9c";
+    var url = "https://leaderboard-4a7a.restdb.io/rest/players"
+    if (document.URL.includes("http://127.0.0.1:5500/form.html"))
+    {
+      //login
+      console.log("yes")
+      APIKEY = "63e2603c478852088da67e5c";
+      url =   "https://login-dc79.restdb.io/rest/players";
+
+    }
   
     let settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://leaderboard-4a7a.restdb.io/rest/players",
+        "url": url,
         "method": "GET", //[cher] we will use GET to retrieve info
         "headers": {
           "content-type": "application/json",
@@ -190,6 +209,7 @@ function formValidation(){
 
 
 $(document).ready(function () {
+  console.log(document.URL)
 
   if (document.URL.includes("http://127.0.0.1:5500/form.html"))
   {
