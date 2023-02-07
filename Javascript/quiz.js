@@ -99,7 +99,8 @@ var getQuestions = function(){
     for (let i = 5; i >= 1; i--)
     {
       console.log(i)
-      document.getElementById(`position${i}`).textContent = ""
+      document.getElementById(`rank${i}`).textContent = ""
+      document.getElementById(`cat${i}`).textContent = ""
       document.getElementById(`name${i}`).textContent = ""
       document.getElementById(`score${i}`).textContent = ""
       document.getElementById(`lives${i}`).textContent = ""
@@ -170,7 +171,8 @@ var getQuestions = function(){
       for (let i = player_compare.length -1 ; i >= 0 ; i--)
       {
         console.log(i)
-        document.getElementById(`position${position}`).textContent = position
+        document.getElementById(`rank${position}`).textContent = position
+        document.getElementById(`cat${position}`).textContent = category_selection
         document.getElementById(`name${position}`).textContent = player_compare[i][0]
         document.getElementById(`score${position}`).textContent = player_compare[i][1]
         document.getElementById(`lives${position}`).textContent = player_compare[i][2]
