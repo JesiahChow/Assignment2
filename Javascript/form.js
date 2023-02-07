@@ -114,6 +114,7 @@ function formValidation(){
     var password = document.getElementById("password").value;
     console.log(name)
     console.log(password)
+    var found_name = false;
 
 
     const APIKEY = "63d1f5f8a95709597409cf9c";
@@ -161,12 +162,19 @@ function formValidation(){
             if (response[i].Password == password)
             {
               alert("You have signed in!");
+              localStorage.setItem("playername",response[i].Name )
+              localStorage.setItem("playerpassword",response[i].Password )
+              localStorage.setItem("playeremail",response[i].Email )
               window.location = "home.html"
             }
             else
             {
               alert("password wrong");
             }
+          }
+          else if (i == (response.length -1) && found_name == false)
+          {
+            alert("Please ensure you have typed in the right username")
           }
 
 
@@ -181,23 +189,18 @@ function formValidation(){
   }
 
 
+$(document).ready(function () {
 
-/*$(document).ready(function () {
-  const start_button = document.getElementById('register');
-  $(start_button).click(function () {
-
-    let status = formValidation();
-    console.log(status)
-
-    if (status == true)
-    {
-      uploadPlayerinfo()
-    }
-
-
-  })
-
-});*/
+  if (document.URL.includes("http://127.0.0.1:5500/form.html"))
+  {
+  localStorage.removeItem("playername")
+  localStorage.removeItem("playerpassword")
+  localStorage.removeItem("playeremail")
+  }
+  console.log(localStorage.getItem("playername"))
+  console.log(localStorage.getItem("playerpassword"))
+  console.log(localStorage.getItem("playeremail"))
+});
 
 
 
