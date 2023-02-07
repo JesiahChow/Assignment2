@@ -111,6 +111,7 @@ function makeQuestions (){
     final_question14 = final_question14.replace("    ,","")
     final_question14 = final_question14.replace("  ,","")
     final_question14 = final_question14.replace(" ,","")
+    final_question14 = final_question14.replace("&....","....")
     final_question14 = final_question14.replace('Llanfairshy;pwllgwyngyll&shy;gogery&shy;chwyrn&shy;drobwll&shy;llan&shy;tysilio&shy;gogo&shy;goch','llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch')
     console.log(final_question14)
     question_list = final_question14.split("?,")
