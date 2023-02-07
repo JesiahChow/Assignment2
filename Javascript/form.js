@@ -3,7 +3,7 @@ function formValidation(){
     let email = document.forms["form"]["email"].value;
     let name = document.forms["form"]["name"].value
     let pwd = document.forms["form"]["psw"].value
-    if(email == "" && name == "" && pwd == ""){
+    if(email == "" || name == "" || pwd == ""){
     alert("Please fill the above fields");
     return false
   }
@@ -20,7 +20,7 @@ function formValidation(){
   function formValidate(){
     let name = document.forms["form"]["name"].value
     let pwd = document.forms["form"]["psw"].value
-    if(name == "" && pwd == ""){
+    if(name == "" || pwd == ""){
     alert("Please fill the above fields");
     return false
   }
