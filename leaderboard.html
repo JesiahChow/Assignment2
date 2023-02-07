@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>leaderboard</title>
     <link rel = "stylesheet" type="text/css" href="CSS/normalize.css">
     <link rel="stylesheet" type="text/css" href="CSS/leaderboard.css">
     <link rel="stylesheet" type="text/css" href="CSS/style.css">
@@ -19,7 +19,7 @@
     <div class="button1">
         <a href="home.html" class="back-button">Back to home</a>
     </div>
-<!--Leaderboard table-->
+<!--Dropdown list-->
 <div class="dropdown-options">
   <div class="dropdown">
       <div class="select">
@@ -47,59 +47,64 @@
   </div>
 </div>
 <br><br>
-   <div class="leaderboard">
-        <table>
-            <caption>M & J Quizzes Leaderboard</caption>
-            <tr>
-              <th id = "position">Rank</th>
-              <th id ="leaderboard-name">Name</th>
-              <th id = "leaderboard-score">Score</th>
-              <th id = "leaderboard-lives">Lives</th>
-      
-             
-            </tr>
-            <tr>
-              <td id = "position1"></td>
-              <td id = "name1"></td>
-              <td id = "score1"></td>
-              <td id = "lives1"></td>
-              
-            </tr>
-            <tr>
-              <td id = "position2"></td>
-              <td id = "name2"></td>
-              <td id = "score2"></td>
-              <td id = "lives2"></td>
-          
-            </tr>
-            <tr>
-                <td id = "position3"></td>
-                <td id = "name3"></td>
-                <td id = "score3"></td>
-                <td id = "lives3"></td>
-            
-              </tr>
-              <tr>
-                <td id = "position4"></td>
-                <td id = "name4"></td>
-                <td id = "score4"></td>
-                <td id = "lives4"></td>
-            
-              </tr>
-              <tr>
-                <td id="position5"></td>
-                <td id="name5"></td>
-                <td id="score5"></td>
-                <td id = "lives5"></td>
-            
-              </tr>
-          </table>
-          
+<!--Leaderboard table-->
+<table class="table">
+      <thead>
+      <tr>
+          <th>Rank</th>
+          <th>Category</th>
+          <th>Name</th>
+          <th>Score</th>
+          <th>Lives</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <td data-label="Rank" id="rank1"></td>
+          <td data-label="Category" id="cat1"></td>
+          <td data-label="Name" id = "name1"></td>
+          <td data-label="Score" id="score1"></td>
+          <td data-label="Lives" id="lives1"></td>
+      </tr>
+       
+      <tr>
+          <td data-label="Rank" id="rank2"></td>
+          <td data-label="Category" id="cat2"></td>
+          <td data-label="Name" id="name2"></td>
+          <td data-label="Score" id="score2"></td>
+          <td data-label="Lives" id="lives2"></td>
+      </tr>
+       
+      <tr>
+          <td data-label="Rank" id="rank3"></td>
+          <td data-label="Category" id="cat3"></td>
+          <td data-label="Name" id="name3"></td>
+          <td data-label="Score" id="score3"></td>
+          <td data-label="Lives" id="lives3"></td>
+      </tr>
+       
+      <tr>
+          <td data-label="Rank" id="rank4"></td>
+          <td data-label="Category" id="cat4"></td>
+          <td data-label="Name" id="name4"></td>
+          <td data-label="Score" id="score4"></td>
+          <td data-label="Lives" id="lives4"></td>
+      </tr>
+                
+      <tr>
+          <td data-label="Rank" id="rank5"></td>
+          <td data-label="Category" id="cat5"></td>
+          <td data-label="Name" id="name5"></td>
+          <td data-label="Score" id="score5"></td>
+          <td data-label="Lives" id="lives5"></td>
+      </tr>
+  </tbody>
+</table>
+       
 
 
-    </div>
 
-    
+ 
 <footer>
     <p>Done by Mikhail and Jesiah</p>
 </footer>
