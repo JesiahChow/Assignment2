@@ -37,6 +37,10 @@ $(document).ready(function () {
   let score = 0;
   let increament = 0
   let difficulty_selection = localStorage.getItem("option2");
+  let lives = 3
+  let heart1 = document.getElementById("heart1")
+  let heart2 = document.getElementById("heart2")
+  let heart3 = document.getElementById("heart3")
   if (difficulty_selection == "Easy")
   {
     increament = 5
@@ -244,6 +248,7 @@ if (i ==0)
          }else{
           $(document.getElementById(this.id)).addClass("incorrect")
           incorrect_sound.play()
+          lives -= 1
           if (set_place == "choice1")
           {
             $(document.getElementById("selection1")).addClass("correct")
@@ -276,6 +281,7 @@ if (i ==0)
         }else{
           $(document.getElementById(this.id)).addClass("incorrect")
           incorrect_sound.play()
+          lives -= 1
           if (set_place == "choice1")
           {
             $(document.getElementById("selection1")).addClass("correct")
@@ -309,6 +315,7 @@ if (i ==0)
         }else{
           $(document.getElementById(this.id)).addClass("incorrect")
           incorrect_sound.play()
+          lives -= 1
           if (set_place == "choice1")
           {
             $(document.getElementById("selection1")).addClass("correct")
@@ -341,6 +348,7 @@ if (i ==0)
         }else{
           $(document.getElementById(this.id)).addClass("incorrect")
           incorrect_sound.play()
+          lives -= 1
           if (set_place == "choice1")
           {
             $(document.getElementById("selection1")).addClass("correct")
@@ -360,6 +368,27 @@ if (i ==0)
          }
          //alert(this.id)
          this.id = "selection4"
+
+      }
+      if (lives==2)
+      {
+        $(heart1).removeClass('current-heart');
+        heart1.src = "Images/broken_heart.png";
+        $(heart1).addClass('broken-heart');
+        $(heart2).addClass('current-heart');
+      }
+      else if (lives==1)
+      {
+        $(heart2).removeClass('current-heart');
+        heart2.src = "Images/broken_heart.png";
+        $(heart2).addClass('broken-heart');
+        $(heart3).addClass('current-heart');
+      }
+      else if (lives==0)
+      {
+        $(heart3).removeClass('current-heart');
+        $(heart3).addClass('broken-heart');
+        heart3.src = "Images/broken_heart.png";
       }
 
 
@@ -425,6 +454,7 @@ $(".choice-container").click(function () {
 
   if (i < 11)
   {
+
     console.log(i)
     setTimeout(() => {
   let selection = ["choice1","choice2","choice3","choice4"]
@@ -464,6 +494,7 @@ $(".choice-container").click(function () {
           }else{
             $(document.getElementById(this.id)).addClass("incorrect")
             incorrect_sound.play()
+            lives -= 1
             if (set_place == "choice1")
             {
               $(document.getElementById("selection1")).addClass("correct")
@@ -496,6 +527,7 @@ $(".choice-container").click(function () {
         }else{
           $(document.getElementById(this.id)).addClass("incorrect")
           incorrect_sound.play()
+          lives -= 1
           if (set_place == "choice1")
           {
             $(document.getElementById("selection1")).addClass("correct")
@@ -528,6 +560,7 @@ $(".choice-container").click(function () {
         }else{
           $(document.getElementById(this.id)).addClass("incorrect")
           incorrect_sound.play()
+          lives -= 1
           if (set_place == "choice1")
           {
             $(document.getElementById("selection1")).addClass("correct")
@@ -560,6 +593,7 @@ $(".choice-container").click(function () {
         }else{
           $(document.getElementById(this.id)).addClass("incorrect")
           incorrect_sound.play()
+          lives -= 1
           if (set_place == "choice1")
           {
             $(document.getElementById("selection1")).addClass("correct")
@@ -579,6 +613,26 @@ $(".choice-container").click(function () {
          }
          //alert(this.id)
          this.id = "selection4"
+      }
+      if (lives==2)
+      {
+        $(heart1).removeClass('current-heart');
+        heart1.src = "Images/broken_heart.png";
+        $(heart1).addClass('broken-heart');
+        $(heart2).addClass('current-heart');
+      }
+      else if (lives==1)
+      {
+        $(heart2).removeClass('current-heart');
+        heart2.src = "Images/broken_heart.png";
+        $(heart2).addClass('broken-heart');
+        $(heart3).addClass('current-heart');
+      }
+      else if (lives==0)
+      {
+        $(heart3).removeClass('current-heart');
+        $(heart3).addClass('broken-heart');
+        heart3.src = "Images/broken_heart.png";
       }
 
 
@@ -644,7 +698,7 @@ $(".choice-container").click(function () {
     question_count ++
     question_heading.textContent = question_count + "/10"
     }
-    if (i == 10)
+    if (i == 10 || lives == 0)
     {
      let ranked = localStorage.getItem("option3")
       if (ranked = "Yes")
@@ -655,11 +709,13 @@ $(".choice-container").click(function () {
         let playercategory = localStorage.getItem("option1")
         let playerDifficulty = localStorage.getItem("option2")
         console.log("reached")
-        uploadPlayerinfo(playername,playeremail,playerpassword,score,3,playercategory,playerDifficulty)
+        uploadPlayerinfo(playername,playeremail,playerpassword,score,lives,playercategory,playerDifficulty)
       }
     }
-    if (i > 10)
+    if (i >10 || lives == 0)
     {
+      $(document.getElementById("click-absorb")).hide();
+      $(document.getElementById("load")).addClass("loader")
       setTimeout(() => {
       localStorage.removeItem("incorrect_answer")
       localStorage.removeItem("correct_answer")

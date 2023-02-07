@@ -343,3 +343,45 @@ footer{
   }
 
 }
+
+.row {
+    display: flex;
+    justify-content: center
+
+  }
+
+img{
+    flex: 33.33%;
+    padding: 5px;
+    margin-left: 85px;
+    margin-right: 85px;
+    margin-top: 25px;
+    height: 100px;
+    width: auto;
+
+    
+
+}
+
+
+.broken-heart{
+    flex: 33.33%;
+    padding: 5px;
+    margin-left: 85px;
+    margin-right: 85px;
+    margin-top: 25px;
+    height: 110px !important;
+    width: auto !important;
+}
+
+.current-heart {
+    animation: scale 2000ms linear infinite;
+}
+
+@keyframes scale {
+    0%{scale: 1;}
+    50% {scale: 1.5;}
+    100%{scale: 1;}
+    
+    
+  }
