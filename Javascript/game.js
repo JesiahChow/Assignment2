@@ -41,6 +41,7 @@ $(document).ready(function () {
   let heart1 = document.getElementById("heart1")
   let heart2 = document.getElementById("heart2")
   let heart3 = document.getElementById("heart3")
+  let score_area = document.getElementById("score-area")
   if (difficulty_selection == "Easy")
   {
     increament = 5
