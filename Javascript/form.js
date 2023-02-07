@@ -129,7 +129,8 @@ function formValidation(){
           "cache-control": "no-cache"
         },
         error: function(xhr, status, error) {
-        alert(xhr.responseText);
+          let err = JSON.parse(xhr.responseText)
+          console.log(err.message)
         },
 
       }
@@ -160,6 +161,7 @@ function formValidation(){
             if (response[i].Password == password)
             {
               alert("You have signed in!");
+              window.location = "home.html"
             }
             else
             {
