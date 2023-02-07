@@ -6,6 +6,7 @@ const dropdowns = document.querySelectorAll('.dropdown');
 localStorage.removeItem("incorrect_answer")
 localStorage.removeItem("correct_answer")
 localStorage.removeItem("questions")
+console.log(document.URL)
 
 //Loop through all dropdown elements
 dropdowns.forEach(dropdown =>{
@@ -49,6 +50,22 @@ dropdowns.forEach(dropdown =>{
                 console.log(document.getElementById("option3").innerHTML);
                 localStorage.setItem("option3",(document.getElementById("option3").innerHTML))
             } 
+
+            if (document.URL.includes("http://127.0.0.1:5500/leaderboard.html"))
+            {
+                if ($('#option1').text().length != 0 && $('#option2').text().length != 0)
+                {
+                    console.log(document.getElementById("option1").innerHTML);
+                    localStorage.setItem("Loption1",(document.getElementById("option1").innerHTML))
+                    console.log(document.getElementById("option2").innerHTML);
+                    localStorage.setItem("Loption2",(document.getElementById("option2").innerHTML))
+                    getPlayerinfo();
+
+                    
+                }
+
+            }
+
 
         });
     });

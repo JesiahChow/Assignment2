@@ -96,10 +96,22 @@ var getQuestions = function(){
   }
 
   function getPlayerinfo(all = true) {
+    for (let i = 5; i >= 1; i--)
+    {
+      console.log(i)
+      document.getElementById(`position${i}`).textContent = ""
+      document.getElementById(`name${i}`).textContent = ""
+      document.getElementById(`score${i}`).textContent = ""
+      document.getElementById(`lives${i}`).textContent = ""
+    }
+    var player_compare = []
+    const APIKEY = "63d1f5f8a95709597409cf9c";
+    let category_selection = localStorage.getItem("Loption1");
+    let difficulty_selection = localStorage.getItem("Loption2");
     //get players info for leaderboard
     //need add arguments for FUTURE
   
-    let player_selection = {"Category" : "General Knowledge", "Difficulty" : "Easy"} // test player selection
+    let player_selection = {"Category" : category_selection, "Difficulty" : difficulty_selection}
   
       let settings = {
         "async": true,
@@ -115,14 +127,15 @@ var getQuestions = function(){
   
   
       $.ajax(settings).done(function (response) {
+
         
-        for (var i = 0; i < response.length ; i++) {
+        for (let i = 0; i < response.length ; i++) {
+
   
           let content = "";
   
           // filter leaderboard to player selection
           if (response[i].Category == player_selection["Category"] && response[i].Difficulty == player_selection["Difficulty"]){
-  
   
             content = `${content}<tr id='${response[i]._id}'>
             <td>${response[i].Name}</td>
@@ -134,17 +147,48 @@ var getQuestions = function(){
             <td>${response[i].Difficulty}</td>
             <td><a href='#' class='delete' data-id='${response[i]._id}'>Del</a></td><td><a href='#update-contact-container' class='update' data-id='${response[i]._id}' data-name='${response[i].Name}' data-email='${response[i].Email}' data-password='${response[i].Password}' data-score='${response[i].Score}' data-lives='${response[i].Lives}' data-category='${response[i].Category}' data-difficulty='${response[i].Difficulty}' >Update</a></td></tr>`;
             console.log(content);
-            console.log(i);
+
+
+            player_compare.push([response[i].Name,response[i].Score,response[i].Lives])
           
           }
         }
+        player_compare.sort(compareSecondColumn);
+        sessionStorage.setItem("players",player_compare)
+        console.log(player_compare)
+
+
+        function compareSecondColumn(a, b) {
+          if (a[1] === b[1]) {
+              return (a[2] < b[2]) ? -1 : 1;
+          }
+          else {
+              return (a[1] < b[1]) ? -1 : 1;
+          }
+      }
+      var position = 1;
+      for (let i = player_compare.length -1 ; i >= 0 ; i--)
+      {
+        console.log(i)
+        document.getElementById(`position${position}`).textContent = position
+        document.getElementById(`name${position}`).textContent = player_compare[i][0]
+        document.getElementById(`score${position}`).textContent = player_compare[i][1]
+        document.getElementById(`lives${position}`).textContent = player_compare[i][2]
+        position ++
+        if (position == 6)
+        {
+          break
+        }
+      }
   
+
+    });
+//if move continue if not move break
   
-      });
-  
-    }
+  }
 
     function uploadPlayerinfo(){
+      const APIKEY = "63d1f5f8a95709597409cf9c";
 
       let player_info= ["Bob","Bob@gmail.com","BobLovesCake",2314,2,"Politics","Easy"] //test_player info
   
