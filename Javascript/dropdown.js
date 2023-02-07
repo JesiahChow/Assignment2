@@ -1,5 +1,6 @@
 //Getting all dropdowns from the document
 const start_button = document.querySelectorAll('.button2');
+$(start_button).addClass('disabled');
 
 const dropdowns = document.querySelectorAll('.dropdown');
 
@@ -75,23 +76,21 @@ dropdowns.forEach(dropdown =>{
 
 
 
-$(function () {
     //add css to disabled class to change button color
-    $(start_button).addClass('disabled');
 
-    $(start_button).click(function () {
-        if ($(this).hasClass('disabled')){
-            return false;
-        } else
-        {
+$(start_button).click(function () {
+    if ($(this).hasClass('disabled')){
+        return false;
+    } else
+    {
 
-            document.getElementById("option3").innerHTML;
+        document.getElementById("option3").innerHTML;
 
-            //put here for now,change a link for start buttom and move this to the js for gameplay html in the FUTURE
-            return true;
-        }
-    });
+        //put here for now,change a link for start buttom and move this to the js for gameplay html in the FUTURE
+        return true;
+    }
 });
+
 
   
   
