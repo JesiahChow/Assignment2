@@ -44,8 +44,7 @@ function Redirect(){
   function uploadPlayerinfo(name,email,password,score,lives,category,difficulty){
     var APIKEY = "63d1f5f8a95709597409cf9c";
     var url = "https://leaderboard-4a7a.restdb.io/rest/players"
-    if (document.URL.includes("http://127.0.0.1:5500/form.html") || document.URL.includes("http://127.0.0.1:5500/signup.html")
-    || document.URL.includes("https://jesiahchow.github.io/Assignment2/form.html") || document.URL.includes("https://jesiahchow.github.io/Assignment2/signup.html"))
+    if (document.URL.includes("http://127.0.0.1:5500/form.html") || document.URL.includes("http://127.0.0.1:5500/signup.html") || document.URL.includes("https://jesiahchow.github.io/Assignment2/form.html") || document.URL.includes("https://jesiahchow.github.io/Assignment2/signup.html"))
     {
       //login
       console.log("yes")
@@ -118,7 +117,14 @@ function Redirect(){
     }
 
     $.ajax(settings).done(function (response) {
-
+      if(   url ==   "https://login-dc79.restdb.io/rest/players")
+      {
+        alert("You have signed in!");
+        localStorage.setItem("playername",name )
+        localStorage.setItem("playerpassword",password )
+        localStorage.setItem("playeremail",email )
+        window.location = "home.html"
+      }
     });
   }
 
@@ -135,7 +141,7 @@ function Redirect(){
 
     var APIKEY = "63d1f5f8a95709597409cf9c";
     var url = "https://leaderboard-4a7a.restdb.io/rest/players"
-    if (document.URL.includes("http://127.0.0.1:5500/form.html"))
+    if (document.URL.includes("http://127.0.0.1:5500/form.html") || document.URL.includes("https://jesiahchow.github.io/Assignment2/form.html"))
     {
       //login
       console.log("yes")
@@ -217,7 +223,7 @@ function Redirect(){
 $(document).ready(function () {
   console.log(document.URL)
 
-  if (document.URL.includes("http://127.0.0.1:5500/form.html"))
+  if (document.URL.includes("http://127.0.0.1:5500/form.html") || document.URL.includes("http://127.0.0.1:5500/signup.html") || document.URL.includes("https://jesiahchow.github.io/Assignment2/form.html") || document.URL.includes("https://jesiahchow.github.io/Assignment2/signup.html"))
   {
   localStorage.removeItem("playername")
   localStorage.removeItem("playerpassword")
