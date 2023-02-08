@@ -16,25 +16,26 @@
       <audio autoplay loop>
         <source src="Audio/Marimba-music.mp3" type="audio/mpeg">
       </audio>
-
+      <!--Login form-->
       <div class="form-popup" id="myForm">
         <form class="form-container" name="form" onsubmit="return formValidate()">
           <h1>Login</h1>
           <label for="name"><b>Name</b></label>
           <input type="text" id="name" placeholder="Enter Name" name="name" required>
 
-          <label for = "psw"><b>Password</b></label>
+          <label for = "password"><b>Password</b></label>
           <input type="password" placeholder="Enter Password" name="psw" required id="password">
 
           <button type="submit" class="btn" id="login-submit">Login</button>
 
-          <button type="button" class="close" ><a href=signup.html>Back</a></button>
+          <button type="button" class="close" onclick="Redirect()" >Back</button>
         </form>
         </div>
         <br><br>
         <br><br>
         <br><br>
         <br>
+        <!--Footer-->
         <footer>
           <p>Done by Mikhail and Jesiah</p>
         </footer>

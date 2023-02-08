@@ -2,11 +2,12 @@
 function formValidation(){
     let email = document.forms["form"]["email"].value;
     let name = document.forms["form"]["name"].value
-    let pwd = document.forms["form"]["psw"].value
+    let pwd = document.forms["form"]["password"].value
     if(email == "" || name == "" || pwd == ""){
     alert("Please fill the above fields");
     return false;
   }
+  /*upload player information into database */
   else{
       uploadPlayerinfo(name,email,pwd,0,0,"NIL","NIL")
       return false;
@@ -16,7 +17,7 @@ function formValidation(){
   /*Form validation for login*/ 
   function formValidate(){
     let name = document.forms["form"]["name"].value
-    let pwd = document.forms["form"]["psw"].value
+    let pwd = document.forms["form"]["password"].value
     if(name == "" || pwd == ""){
     alert("Please fill the above fields");
     return false;
@@ -28,6 +29,10 @@ function formValidation(){
   
     }
   }
+  /*Back button to redirect to index.html*/
+function Redirect(){
+  location.replace("https://jesiahchow.github.io/Assignment2/")
+};
 
 
 
@@ -39,7 +44,8 @@ function formValidation(){
   function uploadPlayerinfo(name,email,password,score,lives,category,difficulty){
     var APIKEY = "63d1f5f8a95709597409cf9c";
     var url = "https://leaderboard-4a7a.restdb.io/rest/players"
-    if (document.URL.includes("http://127.0.0.1:5500/form.html") || document.URL.includes("http://127.0.0.1:5500/signup.html"))
+    if (document.URL.includes("http://127.0.0.1:5500/form.html") || document.URL.includes("http://127.0.0.1:5500/signup.html")
+    || document.URL.includes("https://jesiahchow.github.io/Assignment2/form.html") || document.URL.includes("https://jesiahchow.github.io/Assignment2/signup.html"))
     {
       //login
       console.log("yes")
@@ -227,59 +233,4 @@ $(document).ready(function () {
 
 
 
-/*RestDB Database
 
-const apikey = "63b79ea5969f06502871ab23"
-
-$("#register").on("click",function(e){
-  e.preventDefault();
-  const emailValue = $("#email").val();
-  const passwordValue = $("#password").val();
-  let jsondata = {
-    "email":emailValue,
-    "password": passwordValue
-  };
-  var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://interactivedev-8487.restdb.io/rest/account",
-    "method": "POST",
-    "headers": {
-      "content-type": "application/json",
-      "x-apikey": apikey,
-      "cache-control": "no-cache"
-    },
-    "processData": false,
-    "data": JSON.stringify(jsondata),
-    "beforeSend":function(){
-        $("#register").prop("disabled",true);
-        $("#signup-form").trigger("reset");
-    }
-  }
-  $.ajax(settings).done(function(response){
-    console.log(response);
-    $("#signup-form").prop("disabled",false);
-    getTable();
-  })
-  
-})
-
-function getTable(){
-  var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://interactivedev-8487.restdb.io/rest/account",
-    "method": "GET",
-    "headers": {
-      "content-type": "application/json",
-      "x-apikey": apikey,
-      "cache-control": "no-cache"
-    }
-  }
-  
-  $.ajax(settings).done(function (response) {
-    console.log(response);
-  });
-  
-}
-*/

@@ -2,7 +2,7 @@
 *{
 	box-sizing: border-box;
 }
-
+/* styling and positioning of leaderboard table*/
 .table{
 	width: 100%;
 	border-collapse: collapse;
@@ -10,13 +10,13 @@
 
 .table td,.table th{
   padding:25px 20px;
-  border:1px solid #1c0973;
+  border:1px solid #dddddd;
   text-align: center;
   font-size:16px;
 }
 
 .table tbody tr:nth-child(even){
-	background-color: #16714b;
+	background-color: darkblue;
 }
 
 .table th{
@@ -48,7 +48,7 @@ footer{
 		text-align: right;
 		position: relative;
 	}
-	.table td::before{
+	.table td:before{
 		content: attr(data-label);
 		position: absolute;
 		left:0;

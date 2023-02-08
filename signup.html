@@ -26,11 +26,14 @@
           <label for="name"><b>Name</b></label>
           <input type="text" id ="name" placeholder = "Enter Name" name="name" required>
       
-          <label for="psw"><b>Password</b></label>
+          <label for="password"><b>Password</b></label>
           <input type="password" id = "password" placeholder="Enter Password" name="psw" required>
+        <!--Ask the user if they had an existing account-->
         <p>Already have an account? Sign in <a href="form.html">here</a>.</p>
+
           <button type="submit" class="btn" id="register">Sign Up</button>
-          <button type="button" class="close"><a href = "index.html">Back</a></button>
+
+          <button type="button" class="close" onclick="Redirect()">Back</button>
         </form>
       </div>
       <!--footer-->

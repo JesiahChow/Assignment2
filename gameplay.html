@@ -11,6 +11,7 @@
 </head>
 <body>
     <div id="score-area">
+        <!--implement CSS loader while questions are being loaded-->
         <div id="load">
             <div id="click-absorb">
                 <div class="container">
@@ -20,7 +21,8 @@
                     <div class="quiz">
                         <div id="hud">
                             <!--Heads-up display-->
-                            <div id="hud-item">
+                            <div id="hud-item1">
+                                <!--No. of questions-->
                                 <p class="hud-prefix">
                                     Questions
                                 </p>
@@ -28,7 +30,8 @@
                                     1/10
                                 </h1>
                             </div>
-                            <div id="hud-item">
+                            <div id="hud-item2">
+                                <!--Score-->
                                 <p class="hud-prefix">
                                     Score
                                 </p>
@@ -59,18 +62,19 @@
                     </div>
 
                 </div>
-
+                <!--time bar-->
                 <div class="round-time-bar" id="round-time-bar" data-style="smooth" style="--duration: 10;">
                     <div></div>
                 </div>
+                <!--Image of 3 hearts for the quiz-->
                 <div class="row">
-                    <div id="images">
+                    <div id="images1">
                         <img src ="Images/heart.png" alt="Heart" id="heart1" class="current-heart">
                     </div>
-                    <div id="images">
+                    <div id="images2">
                         <img src ="Images/heart.png" alt="Heart" id="heart2">
                     </div>
-                    <div id="images">
+                    <div id="images3">
                         <img src ="Images/heart.png" alt="Heart" id="heart3">
                     </div>
                 </div>
@@ -78,6 +82,10 @@
                 <br><br>
                 <br><br>
                 <br><br>
+                <!--footer-->
+            </div>
+        </div>
+    </div>
                 <footer>
                     <p>Done by Mikhail and Jesiah</p>
                 </footer>   
@@ -88,10 +96,6 @@
                     <script src="Javascript/game.js"></script>
 
 
-            </div>
-        </div>
-    </div>
-</body>
-</body>
+      
 </body>
 </html>

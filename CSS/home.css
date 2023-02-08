@@ -11,7 +11,16 @@
 
 
 /*background animation for starting page*/
-
+body{
+    background: #4e54c8;  
+    background-size: cover;
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+    width: 100%;
+    height:100vh;
+    
+   
+}
+/*positioning of main content */
 .context {
 
         display: flex;
@@ -34,6 +43,7 @@
     justify-content: center;
     align-items: center;
 }
+/* styling of the buttons */
 .buttons a{
     background-color: red;
     margin: 10px;
@@ -47,18 +57,7 @@
     background-color: #8f94fb;
 }
 
-
-
-body{
-    background: #4e54c8;  
-    background-size: cover;
-    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
-    width: 100%;
-    height:100vh;
-    
-   
-}
-
+/* positioning of items in the circles class*/
 .circles{
  
     top: 0;
@@ -67,7 +66,7 @@ body{
     height: 100%;
     overflow: hidden;
 }
-
+/* positioning and styling of circle list*/
 .circles li{
     position: absolute;
     display: block;
@@ -79,7 +78,7 @@ body{
     bottom: -150px;
     
 }
-/*styling of the shapes in circle class*/
+/*styling of the shapes within the list element in circle class*/
 .circles li:nth-child(1){
     left: 25%;
     width: 80px;
@@ -173,17 +172,20 @@ body{
     }
 
 }
+/*media query for responsive content*/
 @media (max-width:600px)
 {
     .context{
         margin: 20px;
         flex-direction: column;
         margin-right: 35px;
+        margin-top: 279px;
         justify-content: center;
     }
     .buttons{
         flex-direction: column;
         justify-content: center;
     }
+  
 
 }

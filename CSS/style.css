@@ -23,11 +23,12 @@ p{
     padding: 10px;
     font-size: 20px;
 }
-
+/*Lottie animation*/
 .animation{
    display: flex;
    justify-content: center;
 }
+/* styling of buttons at home page */
 .menu{
 text-align: center;
 padding: 70px;
@@ -42,27 +43,37 @@ justify-content: center;
  
 
 }
-/* Leaderboard button */
+/* Leaderboard button using similar design as home page */
 .menu .link1{
     background-color: yellowgreen;
     padding: 27px 41px;
     border-radius: 20px;
 }
+/* styling of leaderboard button when hovered*/
 .menu .link1:hover{
     background-color: rgb(18, 184, 255);
 }
-/* Play button */
+/* styling of play button */
 .menu .link2{
     background-color: rgb(255, 96, 96);
     padding: 27px 68px;
     border-radius: 20px;
 }
+/* styling of exit button */
+.menu .link3{
+    background-color: rgb(33, 203, 146);
+    padding: 27px 68px;
+    border-radius: 20px;
+}
+/* styling of play button when hovered*/
 .menu .link2:hover{
     background-color:rgb(18, 184, 255);
 }
+/*styling of exit button when hovered*/
 .menu .link3:hover{
     background-color:rgb(18, 184, 255) ;
 }
+/*styling of footer*/
 footer{
     padding: 50px;
     color: black;
@@ -73,6 +84,7 @@ footer{
 
  
 }
+/* positioning of back button in game menu*/
 .button1
 {
     display: flex;
@@ -81,6 +93,7 @@ footer{
     flex-direction: row;
 
 }
+/* styling of back button in game menu*/
 .button1 .back-button
 { 
     text-decoration: none;
@@ -93,17 +106,20 @@ footer{
     margin: 20px;
     font-size: 20px;
 }
+/* styling of back button when hovered in game menu */
 .button1 a:hover{
     background-color: rgb(18, 184, 255);
     padding: 27px 68px;
     border-radius: 20px;
 }
+/* positioning of start button in game menu*/
 .start-button{
     display: flex;
     justify-content: center;
     margin: 2px 3px 2px 2px;
 
 }
+/* styling of start button in game menu*/
 .start-button .button2 {
     background-color: rgb(248, 76, 76);
     text-align: center;
@@ -116,12 +132,12 @@ footer{
     color: black;
     
 }
-
+/* styling of disabled class (implemented in javascript)*/
 .disabled{
     background-color: rgb(169, 169, 169) !important;
     cursor: default;
 }
-
+/* styling of start button when hovered in game menu*/
 .button2:hover
 {
     background-color: rgb(18, 184, 255);
@@ -129,6 +145,7 @@ footer{
     border-radius: 20px;
 
 }
+/* styling of text in game menu */
 .text{
     display: flex;
     justify-content: center;
@@ -136,10 +153,11 @@ footer{
     margin: 20px;
     max-width: 100%;
 }
+/*position of the entire dropdown list*/
 .dropdown{
     min-width: 15em;
     position: relative;
-    margin: 70px;
+    margin: 63px;
 
 }
 /*Dropdown button*/
@@ -153,6 +171,7 @@ footer{
 .dropdown *{
     box-sizing: border-box;
 }
+/* styling and positioning of selection box*/
 .select{
     background-color: rgb(46, 173, 118);
     font-size: 22px;
@@ -171,15 +190,18 @@ footer{
     border: 2px solid;
 
 }
+/*styling of dropdown arrow*/
 .caret{
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 6px solid black;
     transition: 0.3s;
 }
+/*animation for dropdown arrow */
 .caret-rotate{
     transform: rotate(180deg);
 }
+/*styling of dropdown list */
 .list{
    list-style:none ;
    padding: 20px;
@@ -198,41 +220,16 @@ footer{
     border-radius: 5px;
     cursor: pointer;
 }
-/*.list li:hover{
 
-}*/
 
-/*open-style*/
+/*styling of list when its open*/
 .list-open{
     display: block;
     opacity: 1;
 
 }
-.homebutton{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    
-}
-.login ,.signup {
-    
-    background-color: red;
-    border: 2px black;
-    padding: 20px;
-    margin: 10px;
-    color: white;
-    border-radius: 5px;
-}
-.login a, .signup a{
-    text-decoration: none;
-    color: white;
-    
-}
-.login:hover,.signup:hover{
-    background-color: rgb(18, 184, 255);
-}
 
-
+/* responsive form */
 .form-popup {
    
     text-align: center;
@@ -305,25 +302,75 @@ footer{
     text-decoration: none;
   }
 
+  /*styling for the 3 hearts representing 3 lives */
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+
+  }
+/* styling hearts image */
+img{
+    display: flex;
+    /*flex: 33.33%;*/
+    padding: 5px;
+    margin-left: 85px;
+    margin-right: 85px;
+    margin-top: 25px;
+    height: 100px;
+    width: auto;
+
+    
+
+}
+
+/* styling of animation of broken heart*/
+.broken-heart{
+    display: flex;
+    flex: 33.33%;
+    padding: 5px;
+    margin-left: 85px;
+    margin-right: 85px;
+    margin-top: 25px;
+    height: 110px !important;
+    width: auto !important;
+}
+
+.current-heart {
+    animation: scale 2000ms linear infinite;
+}
+
+@keyframes scale {
+    0%{-webkit-transform :scale(1);}
+    50% {-webkit-transform:scale(1.5);}
+    100%{-webkit-transform:scale(1);}
+  }
 
 /*flex when reached a specific resolution */
 @media (max-width:600px)
 {
+    h1{
+        margin-right: 20px;
+
+    }
     .menu{
         flex-direction: column;
         
     }
     footer{
         flex-direction: row;
+        margin-right: 28px;
     }
     .button1{
         flex-direction: row;
         justify-content: center;
+        margin-right: 32px;
 
     }
     .start-button,.button2
     {   
         justify-content: center;
+        margin-right: 28px;
     }
     .dropdown-options{
         flex-direction: column;
@@ -340,48 +387,14 @@ footer{
     }
   .text{
     flex-direction: column;
+    margin-right: 60px;
   }
-
-}
-
-.row {
-    display: flex;
-    justify-content: center
-
-  }
-
-img{
-    flex: 33.33%;
-    padding: 5px;
-    margin-left: 85px;
-    margin-right: 85px;
-    margin-top: 25px;
-    height: 100px;
-    width: auto;
-
-    
+  .row{
+    flex-direction: column;
+    margin-left: 49px;}
 
 }
 
 
-.broken-heart{
-    flex: 33.33%;
-    padding: 5px;
-    margin-left: 85px;
-    margin-right: 85px;
-    margin-top: 25px;
-    height: 110px !important;
-    width: auto !important;
-}
-
-.current-heart {
-    animation: scale 2000ms linear infinite;
-}
-
-@keyframes scale {
-    0%{scale: 1;}
-    50% {scale: 1.5;}
-    100%{scale: 1;}
-  }
 
 
