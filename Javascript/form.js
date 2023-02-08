@@ -200,7 +200,7 @@ function Redirect(){
             }
             else
             {
-              alert("password wrong");
+              alert("password is wrong");
             }
           }
           else if (i == (response.length -1) && found_name == false)
