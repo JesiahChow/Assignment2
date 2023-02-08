@@ -52,7 +52,7 @@ dropdowns.forEach(dropdown =>{
                 localStorage.setItem("option3",(document.getElementById("option3").innerHTML))
             } 
 
-            if (document.URL.includes("http://127.0.0.1:5500/leaderboard.html"))
+            if (document.URL.includes("http://127.0.0.1:5500/leaderboard.html") || document.URL.includes("https://jesiahchow.github.io/Assignment2/leaderboard.html"))
             {
                 if ($('#option1').text().length != 0 && $('#option2').text().length != 0)
                 {
