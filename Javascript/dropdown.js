@@ -56,6 +56,7 @@ dropdowns.forEach(dropdown =>{
             {
                 if ($('#option1').text().length != 0 && $('#option2').text().length != 0)
                 {
+                    console.log("test")
                     console.log(document.getElementById("option1").innerHTML);
                     localStorage.setItem("Loption1",(document.getElementById("option1").innerHTML))
                     console.log(document.getElementById("option2").innerHTML);
