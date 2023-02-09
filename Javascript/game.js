@@ -786,7 +786,7 @@ $(".choice-container").click(function () {
       localStorage.removeItem("correct_answer")
       localStorage.removeItem("questions")
       window.location = 'leaderboard.html'
-      },10000)
+      },8000)
     }
   
 
