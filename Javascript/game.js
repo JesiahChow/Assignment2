@@ -766,7 +766,9 @@ $(".choice-container").click(function () {
 
 
         //upload user info to leaderboard
+        setTimeout(() =>{
         uploadPlayerinfo(playername,playeremail,playerpassword,score,lives,playercategory,playerDifficulty)
+        },1000)
       }
     }
 
@@ -776,6 +778,10 @@ $(".choice-container").click(function () {
       $(document.getElementById("click-absorb")).hide();
       $(document.getElementById("load")).addClass("loader")
       setTimeout(() => {
+      incorrect_sound.pause();
+      incorrect_sound.currentTime = 0
+      correct_sound.pause();
+      correct_sound.currentTime = 0
       localStorage.removeItem("incorrect_answer")
       localStorage.removeItem("correct_answer")
       localStorage.removeItem("questions")
