@@ -165,8 +165,9 @@ h1{
   100% { transform: rotate(360deg); }
 }
 
-#text{
+.text{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 22px;
   max-width: 100%;
