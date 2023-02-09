@@ -4,7 +4,7 @@ Team Frosty
 Jesiah and Mikhail P02
 <br>
 Design Process:
-For our assignment 2, we will be doing a trivia quiz both suitable for the elderly and younger generations like us. It will be fun and educational quiz for all ages to learn and at the same time improve their general knowledge and train their mind. There will be a total of 10 questions of 3 different topics to choose from.<br>
+For our assignment 2, we will be doing a trivia quiz both suitable for the elderly and younger generations like us. These idea was taken from a youtube video when I came across a person creating a quiz game and I found it interesting and I thought it will be good for this assignment.<br>It will be fun and educational quiz for all ages to learn and at the same time improve their general knowledge and train their mind. There will be a total of 10 questions of 3 different topics to choose from.<br>
 The topics are general knowledge, sports and politics.There will be a range of difficulties ranging from easy, medium to hard.
 To add some spice to the quiz, you will be given 3 hearts for the quiz.<br>Once you answered incorrectly 3 times for the whole quiz, you are out. Now that is a challenge to overcome. In addition there will be a leaderboard where you can compare your scores to others.
 
@@ -18,7 +18,7 @@ There will be a total of 7 pages including sign in and login pages.
 - Gameplay
 - Leaderboards
 
-Adobe XD Wireframe : https://xd.adobe.com/view/ec4c5d32-b144-4c51-9528-236b1fcabe14-b91f/
+Adobe XD Wireframe :https://xd.adobe.com/view/ec4c5d32-b144-4c51-9528-236b1fcabe14-b91f/
 
 Features:
 
@@ -26,7 +26,7 @@ Features:
 
 - Start button in game menu page should be disable if user did not input their category, difficulty and ranked.
 
-- There will be 2 interactive buttons that will be available for users such as the 'Play' and 'Leaderboard' buttons
+- There will be 2 interactive buttons that will be available for users: the 'Play','Leaderboard' and 'Exit' buttons.
 
 - There will be 3 hearts which are 3 chances given. If you answer each question incorrectly 3 times, the game will end where you left of.
 
@@ -46,11 +46,11 @@ Technologies Used:
 
 Testing:
 
-- The login and signup form should be validated
-- The user should be able to gain points when clicked the correct answer
-- The user should be given points of the specific difficulty when clicking the wrong answer and will proceed to the next question
+- The login and signup form should be validated.
+- The user should be able to gain points when clicked the correct answer.
+- The user should be given points of the specific difficulty when clicking the wrong answer and will proceed to the next question.
 - When clicking the wrong or correct answer, an audio will sound which indicate whether you selected the correct or wrong answer.
-- The user should be able to see themselves and othrts in the leaderboards
+- The user should be able to see themselves and othrts in the leaderboards.
 
 Github link : https://jesiahchow.github.io/Assignment2/
 
