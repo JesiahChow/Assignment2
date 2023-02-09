@@ -766,7 +766,9 @@ $(".choice-container").click(function () {
 
 
         //upload user info to leaderboard
+        setTimeout(() =>{
         uploadPlayerinfo(playername,playeremail,playerpassword,score,lives,playercategory,playerDifficulty)
+        },1000)
       }
     }
 
@@ -780,7 +782,7 @@ $(".choice-container").click(function () {
       localStorage.removeItem("correct_answer")
       localStorage.removeItem("questions")
       window.location = 'leaderboard.html'
-      },10000)
+      },5000)
     }
   
 
