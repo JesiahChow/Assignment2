@@ -50,13 +50,14 @@ Testing:
 - The user should be able to gain points when clicked the correct answer.
 - The user should be given points of the specific difficulty when clicking the wrong answer and will proceed to the next question.
 - When clicking the wrong or correct answer, an audio will sound which indicate whether you selected the correct or wrong answer.
-- The user should be able to see themselves and othrts in the leaderboards.
+- The user should be able to see themselves and others in the leaderboards.
 
 Github link : https://jesiahchow.github.io/Assignment2/
 
 Bugs:
 
-- While doing this assignment, we ran across this bug where we added audio for our background music. When we ran the start page unto live server<br> there was no sound. It is only when we move to another page and back to the start page then there is sound which we find a little weird.
+- There are times when the third party API fetched too many correct and incorrect answers. So we had to continuously reload<br>
+  the gameplay page till we got correct answers and incorrect answers.
 
 Credits:
 
