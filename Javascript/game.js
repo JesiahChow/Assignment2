@@ -1,7 +1,11 @@
+
+//put loader while preparng questions
 $(document.getElementById("click-absorb")).hide();
 $(document.getElementById("load")).addClass("loader")
 
 $(document).ready(function () {
+
+  //get questions using API and format questions first
   let myPromise = new Promise(function(myResolve, myReject) {
     // "Producing Code" (May take some time)
 
@@ -76,8 +80,11 @@ function makeQuestions (){
 
 
 
-  //format each question
+  //format each question answer and incorrect answer
+  //since they appear with random characters which make them less readable
 
+
+  //format questions
   var final_question = question.replace(/&quot;/g,'"')
   final_question = final_question.replace('";,',",")
   final_question = final_question.replace('";',"?")
@@ -112,7 +119,7 @@ function makeQuestions (){
   final_question13 = final_question13.replace('Llanfairshy;pwllgwyngyll&shy;gogery&shy;chwyrn&shy;drobwll&shy;llan&shy;tysilio&shy;gogo&shy;goch','llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch')
   //final_question13 = final_question13.replace('?   ,',' ?,')
 
-  console.log(final_question13)
+  //make questions into list to use
   question_list = final_question13.split("?,")
   if (question_list.length < 10)
   {
@@ -132,18 +139,20 @@ function makeQuestions (){
     final_question14 = final_question14.replace(" ,","")
     final_question14 = final_question14.replace("&....","....")
     final_question14 = final_question14.replace('Llanfairshy;pwllgwyngyll&shy;gogery&shy;chwyrn&shy;drobwll&shy;llan&shy;tysilio&shy;gogo&shy;goch','llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch')
-    console.log(final_question14)
+      //make questions into list to use
     question_list = final_question14.split("?,")
     
   }
+
+
+  //sometimes 2nd spot in list will have an error
   if(question_list.length > 10)
   {
     question_list.splice(1,1)
   }
 
 
-
-
+  //format correct answers
   var answer1 = correct_answer.replace(/&quot;/g,'"')
   var answer2 = answer1.replace(/&#039;/g,"'")
   var answer3 = answer2.replace(/&ldquo;/g,"'")
@@ -152,13 +161,12 @@ function makeQuestions (){
   //answer4 = answer4.replace(", Inc,",",")
   var answer5 = answer4.replace("&","")
   var answer6 = answer5.replace(";","")
-  console.log(answer6)
+
+  //make correct answers into list
   correct_answer_list = answer6.split(",")
 
 
-
-
-
+  //format incorrect answers
   var final_inquestion = incorrect_answer.replace(/&quot;/g,'"')
   var final_inquestion2 = final_inquestion.replace(/&#039;/g,"'")
   var final_inquestion3 = final_inquestion2.replace(/&ldquo;/g,"'")
@@ -166,7 +174,7 @@ function makeQuestions (){
   var final_inquestion5 = final_inquestion4.replace("&","")
   var final_inquestion6 = final_inquestion5.replace(";","")
 
-
+//make incorrect answers into list
   incorect_answer_list = final_inquestion6.split(",")
 
 
@@ -174,43 +182,29 @@ function makeQuestions (){
 
 
 
-console.log(correct_answer_list)
-console.log(question_list)
-console.log(incorect_answer_list)
 
 }
 
-
-
-
-
-const sleep = async (milliseconds) => {
-  await new Promise(resolve => {
-      return setTimeout(resolve, milliseconds)
-  });
-}
-
-
-
-
-
-
+//first program for the first question
 if (i ==0)
 {
 
-
-
+  //check if there is correct amount of questions answers and incorrect answers
   setTimeout(() => {
     if (correct_answer_list.length != 10 || question_list.length != 10 || incorect_answer_list.length != 30)
     {
+      //if not reload the page
       window.location.reload();
     }
   },1000)
+
+  //if its enough, remove loader an show gamepage
   setTimeout(() => {
     $(document.getElementById("load")).removeClass("loader")
     $(document.getElementById("click-absorb")).show();
     $(timer).show();
-  console.log(i)
+
+    //randomly place questions in spots 1-4
   let selection = ["choice1","choice2","choice3","choice4"]
   document.getElementById("question").textContent = question_list[i ]  
   let location = Math.floor(Math.random() * 4)
@@ -229,17 +223,26 @@ if (i ==0)
   let set_place4 = selection[location4]
   document.getElementById(set_place4).textContent = incorect_answer_list[j +2] 
   selection.splice(location4,1)
+
+  //response when the user clicks an option
   var reply_click = function()
   {
+    
+    //stop  countdown timer
     clearTimeout(timeoutId)
+
+    //ensure user cannot click other options
     $(elements).addClass('overlay')
+    //check which option user clicked
       if (this.id == "selection1")
       {
          this.id = "choice1"
+         //check if its correct
          if (this.id == set_place && skip_sound == false)
          {
             console.log("active")
            $(document.getElementById(this.id)).addClass("correct")
+          //ensure they clicked and it wasnt them running out of time
            if (skip_sound == false)
            {
             correct_sound.play()
@@ -247,6 +250,7 @@ if (i ==0)
            score += increament
            score_heading.textContent = score
          }else{
+          //if incorrect
           $(document.getElementById(this.id)).addClass("incorrect")
           incorrect_sound.play()
           lives -= 1
@@ -273,6 +277,7 @@ if (i ==0)
       if (this.id == "selection2")
       {
          this.id = "choice2"
+         //check if its correct
          if (this.id == set_place)
          {
           $(document.getElementById(this.id)).addClass("correct")
@@ -280,6 +285,7 @@ if (i ==0)
           score += increament
           score_heading.textContent = score
         }else{
+          //if incorrect
           $(document.getElementById(this.id)).addClass("incorrect")
           incorrect_sound.play()
           lives -= 1
@@ -307,6 +313,7 @@ if (i ==0)
       if (this.id == "selection3")
       {
          this.id = "choice3"
+          //check if its correct
          if (this.id == set_place)
          {
           $(document.getElementById(this.id)).addClass("correct")
@@ -314,6 +321,7 @@ if (i ==0)
           score += increament
           score_heading.textContent = score
         }else{
+          //if incorrect
           $(document.getElementById(this.id)).addClass("incorrect")
           incorrect_sound.play()
           lives -= 1
@@ -340,6 +348,7 @@ if (i ==0)
       if (this.id == "selection4")
       {
          this.id = "choice4"
+         //check if its correct
          if (this.id == set_place)
          {
           $(document.getElementById(this.id)).addClass("correct")
@@ -347,6 +356,7 @@ if (i ==0)
           score += increament
           score_heading.textContent = score
         }else{
+          //if incorrect
           $(document.getElementById(this.id)).addClass("incorrect")
           incorrect_sound.play()
           lives -= 1
@@ -371,6 +381,7 @@ if (i ==0)
          this.id = "selection4"
 
       }
+      //check amount of lives
       if (lives==2)
       {
         $(heart1).removeClass('current-heart');
@@ -394,6 +405,8 @@ if (i ==0)
 
 
   }
+
+  //event listeners for clicks on the 4 options
   document.getElementById('choice1').onclick = reply_click;
   document.getElementById('choice2').onclick = reply_click;
   document.getElementById('choice3').onclick = reply_click;
@@ -402,6 +415,8 @@ if (i ==0)
   document.getElementById('selection2').onclick = reply_click;
   document.getElementById('selection3').onclick = reply_click;
   document.getElementById('selection4').onclick = reply_click;
+
+  //for the 10 second timer
   const timeoutId = setTimeout(() =>{
     incorrect_sound.play()
     if (set_place == "choice1")
@@ -431,10 +446,16 @@ if (i ==0)
     score_heading.textContent = score
     skip_sound = false
   },10000)
+
+  //add 1 to i for question and answer reference
+  //add 3 to j for incorect answer reference
   i++
   j += 3
   $()
 }, 2000)
+
+//after 2 seconds of showing user feedback
+//allow user to click and do next question
 setTimeout(() => {
   $(elements).removeClass('overlay')
   $(elements).removeClass('correct')
@@ -447,16 +468,17 @@ setTimeout(() => {
 }, 2000)
 }
 
-//add click listener
+
+//add click listener for question 2-10
 
 $(".choice-container").click(function () {
 
 
-
+  //ensure game has not ended
   if (i < 11)
   {
 
-    console.log(i)
+    //randomly place questions in spots 1-4
     setTimeout(() => {
   let selection = ["choice1","choice2","choice3","choice4"]
   document.getElementById("question").textContent = question_list[i ]  
@@ -478,14 +500,21 @@ $(".choice-container").click(function () {
   selection.splice(location4,1)
 
 
+   //response when the user clicks an option
   var reply_click = function()
   {
+
+    //stop countdown timer
     clearTimeout(timeoutId)
-    console.log("active1")
+
+    //stop user from clicking
     $(elements).addClass('overlay')
+
+      //check what option user has  picked
       if (this.id == "selection1")
       {
          this.id = "choice1"
+         //check if option is correct and user clicked on it
          if (this.id == set_place && skip_sound == false)
          {
           $(document.getElementById(this.id)).addClass("correct")
@@ -493,6 +522,7 @@ $(".choice-container").click(function () {
             score += increament
            score_heading.textContent = score
           }else{
+            //if incorrect
             $(document.getElementById(this.id)).addClass("incorrect")
             incorrect_sound.play()
             lives -= 1
@@ -521,11 +551,13 @@ $(".choice-container").click(function () {
          this.id = "choice2"
          if (this.id == set_place)
          {
+          //check if option is correct
           $(document.getElementById(this.id)).addClass("correct")
           correct_sound.play()
           score += increament
           score_heading.textContent = score
         }else{
+          //if incorrect
           $(document.getElementById(this.id)).addClass("incorrect")
           incorrect_sound.play()
           lives -= 1
@@ -554,11 +586,13 @@ $(".choice-container").click(function () {
          this.id = "choice3"
          if (this.id == set_place)
          {
+          //check if option is correct
           $(document.getElementById(this.id)).addClass("correct")
           correct_sound.play()
           score += increament
           score_heading.textContent = score
         }else{
+          //if incorrect
           $(document.getElementById(this.id)).addClass("incorrect")
           incorrect_sound.play()
           lives -= 1
@@ -587,11 +621,13 @@ $(".choice-container").click(function () {
          this.id = "choice4"
          if (this.id == set_place)
          {
+          //check if option is correct
           $(document.getElementById(this.id)).addClass("correct")
           correct_sound.play()
           score += increament
            score_heading.textContent = score
         }else{
+          //if incorrect
           $(document.getElementById(this.id)).addClass("incorrect")
           incorrect_sound.play()
           lives -= 1
@@ -615,6 +651,8 @@ $(".choice-container").click(function () {
          //alert(this.id)
          this.id = "selection4"
       }
+
+      //check on lives user has
       if (lives==2)
       {
         $(heart1).removeClass('current-heart');
@@ -639,6 +677,7 @@ $(".choice-container").click(function () {
 
   }
 
+  //event listener for if user clicks on an option
   document.getElementById('choice1').onclick = reply_click;
   document.getElementById('choice2').onclick = reply_click;
   document.getElementById('choice3').onclick = reply_click;
@@ -647,6 +686,8 @@ $(".choice-container").click(function () {
   document.getElementById('selection2').onclick = reply_click;
   document.getElementById('selection3').onclick = reply_click;
   document.getElementById('selection4').onclick = reply_click;
+
+  //timer of 10seconds to answer question
   const timeoutId = setTimeout(() =>{
     incorrect_sound.play()
     if (set_place == "choice1")
@@ -677,13 +718,18 @@ $(".choice-container").click(function () {
 
   },10000)
 
-
+  //reset timer at end of each question
   $(timer).removeClass("round-time-bar");
   timer.offsetWidth;
   $(timer).addClass("round-time-bar");
+
+  //add 1 to i for question and answer reference
+  //add 3 to j for incorrect answer referenc
   i++
   j += 3
 },2000)
+
+//after 2 seconds of user feedback, move on to next question
   setTimeout(() => {
     $(elements).removeClass('overlay')
     console.log("active2")
@@ -694,25 +740,37 @@ $(".choice-container").click(function () {
     correct_sound.pause();
     correct_sound.currentTime = 0
     skip_sound = false
+
+    //if isnt first question, add to question counter
     if (i != 1)
     {
     question_count ++
     question_heading.textContent = question_count + "/10"
     }
+
+    //if its the last question or user has lost all 3 lives
     if (i == 10 || lives == 0)
     {
+
+      //check if user wants to appear on leaderboard
      let ranked = localStorage.getItem("option3")
       if (ranked = "Yes")
       {
+
+        //if so, get user information
         let playername = localStorage.getItem("playername")
         let playeremail = localStorage.getItem("playeremail")
         let playerpassword = localStorage.getItem("playerpassword")
         let playercategory = localStorage.getItem("option1")
         let playerDifficulty = localStorage.getItem("option2")
-        console.log("reached")
+
+
+        //upload user info to leaderboard
         uploadPlayerinfo(playername,playeremail,playerpassword,score,lives,playercategory,playerDifficulty)
       }
     }
+
+    // check if its the end of game
     if (i >10 || lives == 0)
     {
       $(document.getElementById("click-absorb")).hide();
@@ -736,9 +794,5 @@ $(".choice-container").click(function () {
 
 })
 
-//REMOVE LOCAL STORAGE TO GET ACCURATE QUESTIONS
 
-
-
-//
 
