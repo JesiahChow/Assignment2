@@ -5,8 +5,6 @@
     
 var getQuestions = function(){
 
-  //get players info for leaderboard
-  //need add arguments for FUTURE
   let questions = [];
   let incorrect_answer = []
   let correct_answer = []
@@ -77,6 +75,7 @@ var getQuestions = function(){
 
             if (i == 10)
             {
+              //store strings of the questions for formatting
               let text = questions.toString(',')
               localStorage.setItem("questions",text)
               let text2 = correct_answer.toString(',')
@@ -98,6 +97,7 @@ var getQuestions = function(){
   function getPlayerinfo(all = true) {
     for (let i = 5; i >= 1; i--)
     {
+      //reset upon calling of this function
       console.log(i)
       document.getElementById(`rank${i}`).textContent = ""
       document.getElementById(`cat${i}`).textContent = ""
@@ -107,11 +107,14 @@ var getQuestions = function(){
     }
     var player_compare = []
     const APIKEY = "63d1f5f8a95709597409cf9c";
+
+    //get players info for leaderboard
     let category_selection = localStorage.getItem("Loption1");
     let difficulty_selection = localStorage.getItem("Loption2");
-    //get players info for leaderboard
-    //need add arguments for FUTURE
-  
+
+
+
+    //get leaderboard info
     let player_selection = {"Category" : category_selection, "Difficulty" : difficulty_selection}
   
       let settings = {
@@ -154,6 +157,8 @@ var getQuestions = function(){
           
           }
         }
+
+        //sort leader board in descending order best sccore to worst
         player_compare.sort(compareSecondColumn);
         sessionStorage.setItem("players",player_compare)
         console.log(player_compare)
@@ -168,6 +173,9 @@ var getQuestions = function(){
           }
       }
       var position = 1;
+
+      //put the sorted list of players into the leaderboard
+      //only 5 ppositions
       for (let i = player_compare.length -1 ; i >= 0 ; i--)
       {
         console.log(i)
@@ -185,7 +193,6 @@ var getQuestions = function(){
   
 
     });
-//if move continue if not move break
   
   }
 

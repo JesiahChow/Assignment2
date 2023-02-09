@@ -3,7 +3,7 @@ const start_button = document.querySelectorAll('.button2');
 $(start_button).addClass('disabled');
 
 const dropdowns = document.querySelectorAll('.dropdown');
-
+//reset stored questions
 localStorage.removeItem("incorrect_answer")
 localStorage.removeItem("correct_answer")
 localStorage.removeItem("questions")
@@ -42,8 +42,11 @@ dropdowns.forEach(dropdown =>{
             //Add the open styles to the list element 
             list.classList.remove('list-open');
 
+
+            //Check if difficulty,ranked and category have been filled out
             if ($('#option1').text().length != 0 && $('#option2').text().length != 0 && $('#option3').text().length != 0){
                 $(start_button).removeClass('disabled');
+                //store 3 option values for future use
                 console.log(document.getElementById("option1").innerHTML);
                 localStorage.setItem("option1",(document.getElementById("option1").innerHTML))
                 console.log(document.getElementById("option2").innerHTML);
@@ -51,11 +54,13 @@ dropdowns.forEach(dropdown =>{
                 console.log(document.getElementById("option3").innerHTML);
                 localStorage.setItem("option3",(document.getElementById("option3").innerHTML))
             } 
-
-            if (document.URL.includes("http://127.0.0.1:5500/leaderboard.html"))
+            //Check if the current page is the leaderboard
+            if (document.URL.includes("http://127.0.0.1:5500/leaderboard.html") || document.URL.includes("https://jesiahchow.github.io/Assignment2/leaderboard.html"))
             {
                 if ($('#option1').text().length != 0 && $('#option2').text().length != 0)
-                {
+                {   
+                    console.log("test")
+                    // Store 1 option values for future use
                     console.log(document.getElementById("option1").innerHTML);
                     localStorage.setItem("Loption1",(document.getElementById("option1").innerHTML))
                     console.log(document.getElementById("option2").innerHTML);
@@ -76,17 +81,14 @@ dropdowns.forEach(dropdown =>{
 
 
 
-    //add css to disabled class to change button color
+//Return true or false depending if the button is disabled or not
 
 $(start_button).click(function () {
     if ($(this).hasClass('disabled')){
+            //Add css to disabled class to change button color
         return false;
     } else
     {
-
-        document.getElementById("option3").innerHTML;
-
-        //put here for now,change a link for start buttom and move this to the js for gameplay html in the FUTURE
         return true;
     }
 });
