@@ -24,9 +24,9 @@ Features:
 
 - There will be a login and signup page for users to login and play.
 
-- Start button in game menu page should be disable if user did not input their category, difficulty and ranked.
+- Start button in game menu page should be disabled if user did not input their category, difficulty and ranked.
 
-- There will be 2 interactive buttons that will be available for users: the 'Play','Leaderboard' and 'Exit' buttons.
+- There will be 3 interactive buttons that will be available for users: the 'Play','Leaderboard' and 'Exit' buttons.
 
 - There will be 3 hearts which are 3 chances given. If you answer each question incorrectly 3 times, the game will end where you left of.
 
