@@ -778,15 +778,11 @@ $(".choice-container").click(function () {
       $(document.getElementById("click-absorb")).hide();
       $(document.getElementById("load")).addClass("loader")
       setTimeout(() => {
-      incorrect_sound.pause();
-      incorrect_sound.currentTime = 0
-      correct_sound.pause();
-      correct_sound.currentTime = 0
       localStorage.removeItem("incorrect_answer")
       localStorage.removeItem("correct_answer")
       localStorage.removeItem("questions")
       window.location = 'leaderboard.html'
-      },8000)
+      },5000)
     }
   
 
