@@ -82,6 +82,7 @@ var getQuestions = function(){
               localStorage.setItem("correct_answer",text2)
               let text3 = incorrect_answer.toString(',')
               localStorage.setItem("incorrect_answer",text3)
+              console.log("made")
             } 
 
 

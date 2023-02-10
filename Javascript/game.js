@@ -12,7 +12,7 @@ $(document).ready(function () {
     getQuestions()
     setTimeout(() =>{
     makeQuestions();
-    },1000)
+    },7000)
     if (correct_answer_list.length == 10 && question_list.length == 10 && incorect_answer_list.length == 30)
     {
       myResolve("success"); 
@@ -116,8 +116,10 @@ function makeQuestions (){
   final_question13 = final_question13.replace("    ,","")
   final_question13 = final_question13.replace("  ,","")
   final_question13 = final_question13.replace(" ,","")
+  final_question13 = final_question13.replace('" ?,','" ,')
   final_question13 = final_question13.replace('Llanfairshy;pwllgwyngyll&shy;gogery&shy;chwyrn&shy;drobwll&shy;llan&shy;tysilio&shy;gogo&shy;goch','llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch')
   //final_question13 = final_question13.replace('?   ,',' ?,')
+  final_question13 = final_question13.replace(' must be the..." ,',' must be the..." ?,')
 
   //make questions into list to use
   question_list = final_question13.split("?,")
@@ -140,6 +142,9 @@ function makeQuestions (){
     final_question14 = final_question14.replace("&....","....")
     final_question14 = final_question14.replace('Llanfairshy;pwllgwyngyll&shy;gogery&shy;chwyrn&shy;drobwll&shy;llan&shy;tysilio&shy;gogo&shy;goch','llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch')
       //make questions into list to use
+    final_question14 = final_question14.replace('" ?,','" ,')
+    final_question14 = final_question14.replace('..,','.. ?,')
+    final_question14 = final_question14.replace(' must be the..." ,',' must be the..." ?,')
     question_list = final_question14.split("?,")
     
   }
@@ -153,7 +158,8 @@ function makeQuestions (){
 
 
   //format correct answers
-  var answer1 = correct_answer.replace(/&quot;/g,'"')
+  var answer1 = correct_answer.replace(/,/g,',@')
+  answer1 = answer1.replace(/&quot;/g,'"')
   var answer2 = answer1.replace(/&#039;/g,"'")
   var answer3 = answer2.replace(/&ldquo;/g,"'")
   var answer4 = answer3.replace(/&rdquo;/g,"'")
@@ -161,26 +167,61 @@ function makeQuestions (){
   //answer4 = answer4.replace(", Inc,",",")
   var answer5 = answer4.replace("&","")
   var answer6 = answer5.replace(";","")
+  answer6 = answer6.replace("I came,@ I saw,@ I conquered","I came, I saw, I conquered")
+  answer6 = answer6.replace('November 11,@ 2006','November 11, 2006')
+  answer6 = answer6.replace('D. G. Yuengling and Son,@ Inc','D. G. Yuengling and Son, Inc')
+  answer6 = answer6.replace('2,@722 ft','2,722 ft')
+  answer6 = answer6.replace('July 4,@ 1776','July 4, 1776')
+  answer6 = answer6.replace('September 23rd,@ 1889','September 23rd, 1889')
+  answer6 = answer6.replace('Maine,@ United States','Maine, United States')
+  answer6 = answer6.replace("Sheep's Heart,@ Liver and Lungs","Sheep's Heart, Liver and Lungs")
+  answer6 = answer6.replace('Snivy,@ Tepig,@ Oshawott','Snivy, Tepig, Oshawott')
+  answer6 = answer6.replace(/&/g,'')
+  answer6 = answer6.replace(/;/g,'')
+
+  
 
   //make correct answers into list
-  correct_answer_list = answer6.split(",")
+  correct_answer_list = answer6.split(",@")
 
 
   //format incorrect answers
-  var final_inquestion = incorrect_answer.replace(/&quot;/g,'"')
+  var final_inquestion = incorrect_answer.replace(/,/g,',@')
+  final_inquestion = final_inquestion.replace(/&quot;/g,'"')
   var final_inquestion2 = final_inquestion.replace(/&#039;/g,"'")
   var final_inquestion3 = final_inquestion2.replace(/&ldquo;/g,"'")
   var final_inquestion4 = final_inquestion3.replace(/&rdquo;/g,"'")
   var final_inquestion5 = final_inquestion4.replace("&","")
   var final_inquestion6 = final_inquestion5.replace(";","")
+  final_inquestion6 = final_inquestion6.replace("See no evil,@ hear no evil,@ speak no evil,@Life,@ liberty,@ and happiness,@Past,@ present,@ and future","See no evil, hear no evil, speak no evil,@Life, liberty, and happiness,@Past, present, and future")
+  final_inquestion6 = final_inquestion6.replace('January 8,@ 2007,@December 25,@ 2007,@July 16,@ 2006','January 8, 2007,@December 25, 2007,@July 16, 2006')
+  final_inquestion6 = final_inquestion6.replace('2,@717 ft,@2,@546 ft,@3,@024 ft','2,717 ft,@2,546 ft,@3,024 ft')
+  final_inquestion6 = final_inquestion6.replace('May 4,@ 1776,@June 4,@ 1776,@July 2,@ 1776','May 4, 1776,@June 4, 1776,@July 2, 1776')
+  final_inquestion6 = final_inquestion6.replace('October 19th,@ 1891,@March 4th,@ 1887,@December 27th,@ 1894','October 19th, 1891,@March 4th, 1887,@December 27th, 1894')
+  final_inquestion6 = final_inquestion6.replace('Hesse,@ Germany,@Masovia,@ Poland,@Bavaria,@ Poland','Hesse, Germany,@Masovia, Poland,@Bavaria, Poland')
+  final_inquestion6 = final_inquestion6.replace("Sheep's Heart,@ Kidneys and Lungs,@Sheep's Liver,@ Kidneys and Eyes","Sheep's Heart, Kidneys and Lungs,@Sheep's Liver, Kidneys and Eyes")
+  final_inquestion6 = final_inquestion6.replace('A Chinese meal,@ essentially composed of fish','A Chinese meal, essentially composed of fish')
+  final_inquestion6 = final_inquestion6.replace('Snivy,@ Fennekin,@ Froakie,@Chespin,@ Tepig,@ Froakie,@Chespin,@ Fennekin,@ Oshawott','Snivy, Fennekin, Froakie,@Chespin, Tepig, Froakie,@Chespin, Fennekin, Oshawott')
+  final_inquestion6 = final_inquestion6.replace(/&/g,'')
+  final_inquestion6 = final_inquestion6.replace(/;/g,'')
+
+
+
+
 
 //make incorrect answers into list
-  incorect_answer_list = final_inquestion6.split(",")
+  incorect_answer_list = final_inquestion6.split(",@")
   console.log(final_question13)
+  console.log(final_question14)
   console.log(answer6)
+  console.log(localStorage.getItem("correct_answer"))
+  console.log(localStorage.getItem("incorrect_answer"))
   console.log(question_list);
   console.log(correct_answer_list)
   console.log(incorect_answer_list)
+  localStorage.removeItem("incorrect_answer")
+  localStorage.removeItem("correct_answer")
+  localStorage.removeItem("questions")
 
 
   
@@ -191,12 +232,15 @@ function makeQuestions (){
 }
 
 //first program for the first question
+setTimeout(() => {
+
+
 if (i ==0)
 {
 
   //check if there is correct amount of questions answers and incorrect answers
   setTimeout(() => {
-    if (correct_answer_list.length != 10 || question_list.length != 10 || incorect_answer_list.length != 30)
+    if (question_list.length != 10 ||  correct_answer_list.length != 10 || incorect_answer_list.length != 30)
     {
       //if not reload the page
       window.location.reload();
@@ -472,6 +516,7 @@ setTimeout(() => {
   skip_sound = false
 }, 2000)
 }
+},6000)
 
 
 //add click listener for question 2-10
@@ -783,9 +828,6 @@ $(".choice-container").click(function () {
       $(document.getElementById("click-absorb")).hide();
       $(document.getElementById("load")).addClass("loader")
       setTimeout(() => {
-      localStorage.removeItem("incorrect_answer")
-      localStorage.removeItem("correct_answer")
-      localStorage.removeItem("questions")
       window.location = 'leaderboard.html'
       },7000)
     }
