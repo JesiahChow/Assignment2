@@ -6,7 +6,7 @@ Jesiah and Mikhail P02
 Design Process:
 For our assignment 2, we will be doing a trivia quiz both suitable for the elderly and younger generations like us. These idea was taken from a youtube video when I came across a person creating a quiz game and I found it interesting and I thought it will be good for this assignment.It will be fun and educational quiz for all ages to learn and at the same time improve their general knowledge and train their mind. There will be a total of 10 questions of 3 different topics to choose from.
 The topics are general knowledge, sports and politics.There will be a range of difficulties ranging from easy, medium to hard.
-To add some spice to the quiz, you will be given 3 hearts which represents 3 lives for the quiz.Each time you answered a question incorrectly, a live will be taken off. After 3 incorrect answers, you are out of the game and will be directed to the leaderboard section to see your results. Now that is a challenge that users have to overcome.
+To add some spice to the quiz, you will be given 3 hearts which represents 3 lives for the quiz.Each time you answered a question incorrectly, a live will be taken off. After 3 incorrect answers, you are out of the game and will be directed to the leaderboard section to see your results (if you did not see your results means you did not do as well as the top 5s). Now that is a challenge that users have to overcome.
 
 There will be a total of 7 pages.
 
