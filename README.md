@@ -18,7 +18,7 @@ There will be a total of 7 pages including sign in and login pages.
 - Gameplay
 - Leaderboards
 
-Adobe XD Wireframe :https://xd.adobe.com/view/ec4c5d32-b144-4c51-9528-236b1fcabe14-b91f/
+  Adobe XD Wireframe :https://xd.adobe.com/view/ec4c5d32-b144-4c51-9528-236b1fcabe14-b91f/
 
 Features:
 
