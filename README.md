@@ -56,7 +56,7 @@ Jesiah and Mikhail P02
 - When user click the wrong or correct answer, an audio will sound which indicate whether you selected the correct or wrong answer.
 - The user should be able to see themselves and others in the leaderboards.
 
-8. Github link : https://jesiahchow.github.io/Assignment2/ (when i pressed this github link it does not play the audio at the start page but if you view deployment it plays the background audio.)
+8. Github link : https://jesiahchow.github.io/Assignment2/ (when i pressed this github link it does not play the audio at the start page but if you view deployment from github it plays the background audio.)
 
 9. Bugs:
 
