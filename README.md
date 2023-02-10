@@ -72,7 +72,7 @@ Jesiah and Mikhail P02
 - broken heart icon taken from https://freesvg.org/broken-heart-icon
   recolored broken heart icon using adobe photoshop
 - CSS loader is referred from:https://www.w3schools.com/howto/howto_css_loader.asp
-  The fonts are taken from:
+- The fonts are taken from:
 - https://fonts.google.com/specimen/Kanit?preview.text=Who%20scored%20against%20Real%20Madrid%3F&preview.text_type=custom
 - Custom css backgrounds are taken from
   - https://dev.to/babib/amazing-pure-html-and-css-background-animations-4dim
