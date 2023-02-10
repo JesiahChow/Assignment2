@@ -177,6 +177,8 @@ function makeQuestions (){
 //make incorrect answers into list
   incorect_answer_list = final_inquestion6.split(",")
   console.log(question_list);
+  console.log(correct_answer_list)
+  console.log(incorect_answer_list)
 
 
   
