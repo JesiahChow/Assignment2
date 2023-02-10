@@ -4,9 +4,9 @@ Team Frosty
 Jesiah and Mikhail P02
 <br>
 Design Process:
-For our assignment 2, we will be doing a trivia quiz both suitable for the elderly and younger generations like us. These idea was taken from a youtube video when I came across a person creating a quiz game and I found it interesting and I thought it will be good for this assignment.<br>It will be fun and educational quiz for all ages to learn and at the same time improve their general knowledge and train their mind. There will be a total of 10 questions of 3 different topics to choose from.<br>
+For our assignment 2, we will be doing a trivia quiz both suitable for the elderly and younger generations like us. These idea was taken from a youtube video when I came across a person creating a quiz game and I found it interesting and I thought it will be good for this assignment.It will be fun and educational quiz for all ages to learn and at the same time improve their general knowledge and train their mind. There will be a total of 10 questions of 3 different topics to choose from.
 The topics are general knowledge, sports and politics.There will be a range of difficulties ranging from easy, medium to hard.
-To add some spice to the quiz, you will be given 3 hearts which represents 3 lives for the quiz.<br>Each time you answered a question incorrectly, a live will be taken off. After 3 incorrect answers, you are out of the game and will be directed to the leaderboard section to see your results. Now that is a challenge that users have to overcome.
+To add some spice to the quiz, you will be given 3 hearts which represents 3 lives for the quiz.Each time you answered a question incorrectly, a live will be taken off. After 3 incorrect answers, you are out of the game and will be directed to the leaderboard section to see your results. Now that is a challenge that users have to overcome.
 
 There will be a total of 7 pages.
 
@@ -57,7 +57,7 @@ Github link : https://jesiahchow.github.io/Assignment2/
 
 Bugs:
 
-- When we fetched the API from a third party API database website, there were lots of weird characters inside the string<br>
+- When we fetched the API from a third party API database website, there were lots of weird characters inside the string
   of questions such as "At what& year..." which makes it unreadable for user and so we had to manually replace them one by one so that the quiz questions and answers would be readable for all.
 
 Credits:
