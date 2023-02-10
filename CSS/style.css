@@ -359,7 +359,7 @@ img{
     }
     footer{
         flex-direction: row;
-        margin-right: 28px;
+        margin-top: 115px;
     }
     .button1{
         flex-direction: row;
@@ -387,7 +387,9 @@ img{
     }
   .text{
     flex-direction: column;
-    margin-right: 60px;
+    margin-right: 50px;
+
+    
   }
   .row{
     flex-direction: column;
