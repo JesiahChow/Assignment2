@@ -64,7 +64,7 @@ Credits:
 - The APIs are taken from https://opentdb.com/api_config.php
 - Heart icon taken from: https://commons.wikimedia.org/wiki/File:Love_Heart_symbol.svg
 - broken heart icon taken from https://freesvg.org/broken-heart-icon
-  recolored broken heart icon and made stopwatch icon using adobe photoshop
+  recolored broken heart icon using adobe photoshop
 
 The fonts are taken from:
 
